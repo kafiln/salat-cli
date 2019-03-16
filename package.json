@@ -1,0 +1,19 @@
+{
+  "name": "morocco-prayer-times",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jsdom": "^14.0.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Kafil Nasdami <kafil.nasdami@gmail.com>",
+  "license": "ISC"
+}
