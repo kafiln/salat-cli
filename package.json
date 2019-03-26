@@ -11,9 +11,10 @@
     "nodemon": "^1.18.10"
   },
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index"
   },
   "keywords": [],
   "author": "Kafil Nasdami <kafil.nasdami@gmail.com>",
-  "license": "ISC"
+  "license": "MIT"
 }
