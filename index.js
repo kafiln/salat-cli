@@ -1,7 +1,9 @@
+// Project's dependencies
 const request = require('request');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+// Project's data
 const cities = require('./data/fr/cities_fr.json');
 const prayers = require('./data/fr/prayers_fr.json');
 const { API_URL, DEFAULT_CITY } = require("./constants");
@@ -30,7 +32,6 @@ request(`${API_URL}?ville=${cityId}`, { json: true }, (err, res, body) => {
 
 
 let getPrayerTimes = function (tds) {
-
     var j = 0;
     for (var i = 0; i < tds.length; i++) {
         if (i % 2) {
