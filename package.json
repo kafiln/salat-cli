@@ -1,8 +1,11 @@
 {
   "name": "morocco-prayer-times",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "salat": "index.js"
+  },
   "dependencies": {
     "jsdom": "^14.0.0",
     "request": "^2.88.0"
