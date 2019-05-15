@@ -1,13 +1,19 @@
 {
   "name": "morocco-prayer-times",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "jsdom": "^14.0.0",
     "request": "^2.88.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm publish"
+    }
+  },
   "devDependencies": {
+    "husky": "^2.3.0",
     "nodemon": "^1.18.10"
   },
   "scripts": {
