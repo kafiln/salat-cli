@@ -32,7 +32,7 @@ const getArgs = (arg, cities) => {
 const cityId =
   (args[2] ? getArgs(args[2], cities) : DEFAULT_CITY) || DEFAULT_CITY;
 
-request(`${API_URL}?ville=${cityId}`, { json: true }, (err, res, body) => {
+request(`${API_URL}?ville=${cityId}`, { json: true }, (err, _res, body) => {
   if (err) {
     return console.log(err);
   }

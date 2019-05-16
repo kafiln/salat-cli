@@ -8,7 +8,7 @@ The source of the data is [the Moroccan Ministery Website](http://www.habous.gov
 
 ```bash
 # Clone this repo
-git clone https://github.com/Kafiil/MoroccanPrayersTime  [your_repo_name]
+git clone https://github.com/Kafiil/salat  [your_repo_name]
 
 # Cd into it
 cd your_repo_name
@@ -27,7 +27,7 @@ npm start
 # The programs prints to the console the prayers' time for the current day in the default city as shown bellow:
 ```
 
-![demo](images/demo.png)
+<img src="images/demo.png">
 
 ## Change the default city
 
@@ -156,13 +156,11 @@ npm start
 
 - For example if your city is `Marrakech`, it's value is `84`
 
-![demo](images/demo2.png)
+<img src="images/demo2.png">
 
-
-# Help 
+# Help
 
 Please keep in mind that this is a work in progress in a very early stages, any help is appreciated and more than welcome.
-
 
 # Todo
 
