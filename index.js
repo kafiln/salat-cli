@@ -16,7 +16,7 @@ const green = msg => console.log(chalk.green(msg));
 
 // Project's data
 const { BANNER, LOCAL_STORAGE_PATH } = require("./constants");
-const cities = require("./data/fr/cities_fr.json");
+const cities = require("./data/cities.json");
 
 // Setting up localStorage
 const { LocalStorage } = require("node-localstorage");
