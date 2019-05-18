@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Daily moroccan prayers time, right in your console, at the tip of your fingers",
   "main": "index.js",
   "bin": {
