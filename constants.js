@@ -12,7 +12,7 @@ const BANNER = `
     require("./package.json").version
   }
   -------------------------------------------  by ${
-    require("./package.json").author
+    require("./package.json").author.name
   }
   `;
 
