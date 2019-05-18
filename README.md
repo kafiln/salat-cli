@@ -4,9 +4,9 @@
 
 > Daily prayer time in all the cities in [Morocco](https://www.google.com/search?q=morocco) :morocco:, directly in your terminal, at the tip of your fingers
 
-![demo1](./images/demo1.png)
+![demo1](images/demo1.png)
 
-![demo2](./images/demo2.png)
+![demo2](images/demo2.png)
 
 **A stupid simple Command line utility to get the daily prayers time for all the citiy in Morocco**
 
