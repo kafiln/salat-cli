@@ -1,12 +1,16 @@
+<p align="center">
+  <img width="250" src="images/logo.png"> 
+</p>
+
 # Salat [![npm version](https://badge.fury.io/js/salat.svg)](https://badge.fury.io/js/salat)
 
 ## Description
 
 > Daily prayer time in all the cities in [Morocco](https://www.google.com/search?q=morocco) :morocco:, directly in your terminal, at the tip of your fingers
 
-![demo1](images/demo1.png)
-
-![demo2](images/demo2.png)
+<p align="center">
+  <img  src="images/screenShot1.png"> 
+</p>
 
 **A stupid simple Command line utility to get the daily prayers time for all the citiy in Morocco**
 
@@ -35,6 +39,10 @@ $ salat [cityName]
 ```bash
 # The programs prints to the console the prayers' time for the current day in the default city as shown bellow:
 ```
+
+<p align="center">
+  <img  src="images/screenShot2.png"> 
+</p>
 
 ## Dependecies
 
