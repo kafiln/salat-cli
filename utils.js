@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { JSDOM } = require("jsdom");
 
-const prayers = require("./data/fr/prayers_fr.json");
+const prayers = require("./data/prayers.json");
 const chalk = require("chalk");
 const { API_URL, DEFAULT_CITY } = require("./constants");
 const { NOT_FOUND_ERROR } = require("./constants");
