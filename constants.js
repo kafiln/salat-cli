@@ -23,5 +23,6 @@ module.exports = {
   API_URL,
   BANNER,
   NOT_FOUND_ERROR,
-  DEFAULT_CITY: "Marrakech"
+  DEFAULT_CITY: "Marrakech",
+  LOCAL_STORAGE_PATH: "./storage"
 };
