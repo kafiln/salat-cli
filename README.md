@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" src="images/logo.png"> 
+  <img  src="images/logo.png"> 
 </p>
 
 # Salat [![npm version](https://badge.fury.io/js/salat.svg)](https://badge.fury.io/js/salat)
