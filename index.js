@@ -50,4 +50,6 @@ const main = async () => {
   displayResult(prayers, cityName);
 };
 
+console.time("Execution Time");
 main();
+console.timeEnd("Execution Time");
