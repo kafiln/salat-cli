@@ -1,23 +1,14 @@
 # Description
 
-A Command line Utility to get the prayer's time in Morocco by city
+## Daily prayer time in all the cities in Morocco, directly in your terminal , at the tip of your fingers
+
+A stupid simple Command line utility to get the daily prayers time for all the citiy in Morocco
 
 The source of the data is [the Moroccan Ministery Website](http://www.habous.gov.ma)
 
 ## Getting started
 
 ```bash
-# Clone this repo
-git clone https://github.com/Kafiil/salat  [your_repo_name]
-
-# Cd into it
-cd your_repo_name
-
-# Install dependecies
-npm install
-
-# Run the program
-npm start
 
 ```
 
@@ -26,6 +17,14 @@ npm start
 ```bash
 # The programs prints to the console the prayers' time for the current day in the default city as shown bellow:
 ```
+
+## Dependecies
+
+The code behind depends on :
+
+- `(axios)[https://github.com/axios/axios]` to make an http request ( fetch the data).
+- `(jsdom)[https://github.com/jsdom/jsdom]` to parse the html result.
+- `(chalk)[https://github.com/chalk/chalk]` to avoid boring styles and colors.
 
 <img src="images/demo.png">
 
@@ -166,3 +165,6 @@ Please keep in mind that this is a work in progress in a very early stages, any 
 
 - Command to set the default city
 - Command to display the list of available cities
+
+Show your support ==> Star the repo
+If you think this is not a useless piece of code
