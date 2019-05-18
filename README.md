@@ -9,6 +9,18 @@ The source of the data is [the Moroccan Ministery Website](http://www.habous.gov
 ## Getting started
 
 ```bash
+// Installation
+
+npm i -g salat
+
+// Run with default city
+
+salat
+
+// Run with custom city
+
+salat [cityName]
+
 
 ```
 
@@ -18,15 +30,16 @@ The source of the data is [the Moroccan Ministery Website](http://www.habous.gov
 # The programs prints to the console the prayers' time for the current day in the default city as shown bellow:
 ```
 
+<img src="images/demo.png">
+
 ## Dependecies
 
 The code behind depends on :
 
-- `(axios)[https://github.com/axios/axios]` to make an http request ( fetch the data).
-- `(jsdom)[https://github.com/jsdom/jsdom]` to parse the html result.
-- `(chalk)[https://github.com/chalk/chalk]` to avoid boring styles and colors.
-
-<img src="images/demo.png">
+- `[axios](https://github.com/axios/axios)` to make an http request ( fetch the data).
+- `[jsdom](https://github.com/jsdom/jsdom)` to parse the html result.
+- `[chalk](https://github.com/chalk/chalk)` to avoid boring styles and colors.
+- `[node-localstorage](https://github.com/lmaccherone/node-localstorage)` to read and write from localstorage.
 
 ## Change the default city
 

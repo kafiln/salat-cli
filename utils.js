@@ -1,4 +1,6 @@
 const axios = require("axios");
+const { JSDOM } = require("jsdom");
+
 const prayers = require("./data/fr/prayers_fr.json");
 const chalk = require("chalk");
 const { API_URL, DEFAULT_CITY } = require("./constants");
@@ -31,7 +33,10 @@ const getCityIndex = (city, cities) =>
 module.exports.getData = async cityId =>
   await axios.get(`${API_URL}?ville=${cityId}`);
 
-module.exports.parsePrayerTimesFromResponse = tds => {
+module.exports.parsePrayerTimesFromResponse = response => {
+  const dom = new JSDOM(`${response.data}`);
+  const tds = dom.window.document.getElementsByTagName("td");
+
   let j = 0;
   for (let i = 0; i < tds.length; i++) {
     if (i % 2) {

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 // Project's dependencies
-const { JSDOM } = require("jsdom");
 const chalk = require("chalk");
 const args = process.argv;
 const {
@@ -9,36 +8,46 @@ const {
   getCityName,
   displayResult,
   getData,
-  parsePrayerTimesFromResponse,
-  banner
+  parsePrayerTimesFromResponse
 } = require("./utils.js");
 
-const { BANNER } = require("./constants");
-
-// Login functioin
+// Logging functioin
 const green = msg => console.log(chalk.green(msg));
 
-// Prinitng the banner ('cause I'm cool and I can do it XD)
-green(BANNER);
-
 // Project's data
+const { BANNER, LOCAL_STORAGE_PATH } = require("./constants");
 const cities = require("./data/fr/cities_fr.json");
+
+// Setting up localStorage
+const { LocalStorage } = require("node-localstorage");
+localStorage = new LocalStorage(LOCAL_STORAGE_PATH);
 
 const cityName = getCityName(args[2], cities);
 const cityId = getCityId(cityName, cities);
 
-const main = async id => {
-  try {
-    const response = await getData(id);
-    const dom = new JSDOM(`${response.data}`);
-    const tds = dom.window.document.getElementsByTagName("td");
-    const prayers = parsePrayerTimesFromResponse(tds);
-    displayResult(prayers, cityName);
-  } catch (ex) {
-    //TODO: Use a more descriptif error message
-    console.error("Someting bad happened");
-    console.log(ex);
+const main = async () => {
+  // Prinitng a banner ('cause I'm cool and I can do it XD)
+  green(BANNER);
+
+  const storageKey = `${cityName.toLowerCase()}_${new Date().toLocaleDateString()}`;
+  const item = localStorage.getItem(storageKey);
+  let prayers;
+
+  if (item) {
+    prayers = JSON.parse(item);
+  } else {
+    try {
+      prayers = parsePrayerTimesFromResponse(await getData(cityId));
+      localStorage.setItem(storageKey, JSON.stringify(prayers));
+    } catch (ex) {
+      //TODO: Use a more descriptif error message
+      console.error("Someting bad happened");
+      console.log(ex);
+      return;
+    }
   }
+
+  displayResult(prayers, cityName);
 };
 
-main(cityId);
+main();
