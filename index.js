@@ -42,7 +42,7 @@ const main = async () => {
     } catch (ex) {
       //TODO: Use a more descriptif error message
       console.error("Someting bad happened");
-      console.log(ex);
+      // console.log(ex);
       return;
     }
   }
@@ -50,6 +50,8 @@ const main = async () => {
   displayResult(prayers, cityName);
 };
 
-console.time("Execution Time");
-main();
-console.timeEnd("Execution Time");
+(async () => {
+  console.time("Execution Time");
+  await main();
+  console.timeEnd("Execution Time");
+})();
