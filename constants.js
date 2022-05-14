@@ -1,6 +1,6 @@
 const API_URL =
-    "http://www.habous.gov.ma/prieres/horaire-api.php";
-  //"http://www.habous.gov.ma/horaire%20de%20priere/horaire-pub.php";
+  "http://www.habous.gov.ma/prieres/horaire-api.php";
+//"http://www.habous.gov.ma/horaire%20de%20priere/horaire-pub.php";
 
 const BANNER = ``;
 
