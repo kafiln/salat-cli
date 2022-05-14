@@ -1,20 +1,8 @@
 const API_URL =
-  "http://www.habous.gov.ma/horaire%20de%20priere/horaire-pub.php";
+    "http://www.habous.gov.ma/prieres/horaire-api.php";
+  //"http://www.habous.gov.ma/horaire%20de%20priere/horaire-pub.php";
 
-const BANNER = `
-  _______  _______  ___      _______  _______ 
-  |       ||   _   ||   |    |   _   ||       |
-  |  _____||  | |  ||   |    |  | |  ||_     _|
-  | |_____ |  |_|  ||   |    |  |_|  |  |   |  
-  |_____  ||       ||   |___ |       |  |   |  
-  _____|  ||   _   ||       ||   _   |  |   |  
-  |_______||__| |__||_______||__| |__|  |___|  v.${
-    require("./package.json").version
-  }
-  -------------------------------------------  by ${
-    require("./package.json").author.name
-  }
-  `;
+const BANNER = ``;
 
 const NOT_FOUND_ERROR = `
   Your city was not found in the list
