@@ -3,9 +3,9 @@
   "version": "0.2.10",
   "description": "Daily moroccan prayers time, right in your console, at the tip of your fingers",
   "homepage": "https://github.com/Kafiil/salat",
-  "main": "index.js",
+  "main": "app.js",
   "bin": {
-    "salat": "index.js"
+    "salat": "app.js"
   },
   "dependencies": {
     "axios": ">=0.19.0",
@@ -17,8 +17,8 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index"
+    "dev": "nodemon app.js",
+    "start": "node app"
   },
   "keywords": [
     "prayers",

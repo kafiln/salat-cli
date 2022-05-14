@@ -1,7 +1,3 @@
-<p align="center">
-  <img  src="images/logo.png"> 
-</p>
-
 # Salat [![npm version](https://badge.fury.io/js/salat.svg)](https://badge.fury.io/js/salat)
 
 ## Description
@@ -38,6 +34,8 @@ $ salat [cityName]
 ```
 ![screen 1](images/screenShot1.png)
 ![screen 2](images/screenShot2.png)
+![screen 3](images/screenShot3.png)
+
 
 ## Dependecies
 
