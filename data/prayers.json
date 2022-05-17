@@ -1,20 +1,20 @@
 [
     {
-        "name": "Fajr"
+        "Prayer": "Fajr"
     },
     {
-        "name": "Chorouq"
+        "Prayer": "Chorouq"
     },
     {
-        "name": "Dhuhr"
+        "Prayer": "Dhuhr"
     },
     {
-        "name": "Asr"
+        "Prayer": "Asr"
     },
     {
-        "name": "Maghrib"
+        "Prayer": "Maghrib"
     },
     {
-        "name": "Ishae"
+        "Prayer": "Ishae"
     }
 ]

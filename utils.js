@@ -40,22 +40,40 @@ module.exports.parsePrayerTimesFromResponse = response => {
   let j = 0;
   for (let i = 0; i < tds.length; i++) {
     if (i % 2) {
-      prayers[j].time = tds[i].textContent.trim();
+      prayers[j].Time = tds[i].textContent.trim();
       j++;
     }
   }
   // Transorm array to object and return it
-  return prayers.reduce((acc, { name, time }) => {
-    acc[name] = time;
+  return prayers.reduce((acc, { Prayer, Time }) => {
+    acc[Prayer] = Time;
     return acc;
   }, {});
+
+};
+
+function tConv24(time24) {
+  var ts = time24;
+  var H = +ts.substr(0, 2);
+  var h = (H % 12) || 12;
+  h = (h < 10)?("0"+h):h;  // leading 0 at the left for 1 digit hours
+  var ampm = H < 12 ? ` ${chalk.hex('#a6c9de').visible('AM')}` : ` ${chalk.hex('#debfa6').visible('PM')}`;
+  ts = h + ts.substr(2, 3) + ampm;
+  return ts;
 };
 
 module.exports.displayResult = (prayers, city) => {
   if (prayers) {
     console.log(
-      `Prayer's time in ${city}, Morocco\nOn the day : ${new Date().toDateString()}`
+      ` 🧭 ${city}, Morocco\n\n 📆 ${new Date().toDateString()}`
     );
-    console.table(prayers);
+    console.log(`
+ ◽ ${chalk.cyan('Fajr')}     -->   ${chalk.green(tConv24(prayers.Fajr))}
+ ◽ ${chalk.cyan('Chorouq')}  -->   ${chalk.green(tConv24(prayers.Chorouq))}
+ ◽ ${chalk.cyan('Dhuhr')}    -->   ${chalk.green(tConv24(prayers.Dhuhr))}
+ ◽ ${chalk.cyan('Asr')}      -->   ${chalk.green(tConv24(prayers.Asr))}
+ ◽ ${chalk.cyan('Maghrib')}  -->   ${chalk.green(tConv24(prayers.Maghrib))}
+ ◽ ${chalk.cyan('Ishae')}    -->   ${chalk.green(tConv24(prayers.Ishae))}`
+);
   }
 };

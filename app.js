@@ -41,7 +41,7 @@ const main = async () => {
       localStorage.setItem(storageKey, JSON.stringify(prayers));
     } catch (ex) {
       //TODO: Use a more descriptif error message
-      console.error("Someting bad happened");
+      console.error("Someting went wrong!");
       // console.log(ex);
       return;
     }
@@ -51,7 +51,5 @@ const main = async () => {
 };
 
 (async () => {
-  console.time("Execution Time");
   await main();
-  console.timeEnd("Execution Time");
 })();
