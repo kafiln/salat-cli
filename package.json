@@ -14,7 +14,7 @@
     "node-localstorage": "^1.3.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.20"
   },
   "scripts": {
     "dev": "nodemon app.js",
