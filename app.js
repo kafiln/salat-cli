@@ -10,6 +10,7 @@ const {
   getData,
   parsePrayerTimesFromResponse
 } = require("./utils.js");
+process.env.NODE_TLS_REJECT_UNAUTHORIZED="0"
 
 // Logging functioin
 const green = msg => console.log(chalk.green(msg));
@@ -41,7 +42,8 @@ const main = async () => {
       localStorage.setItem(storageKey, JSON.stringify(prayers));
     } catch (ex) {
       //TODO: Use a more descriptif error message
-      console.error("Someting went wrong!");
+      console.error("Something went wrong!");
+      console.log(ex)
       // console.log(ex);
       return;
     }
