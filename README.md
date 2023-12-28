@@ -25,6 +25,12 @@ $ salat
 $ salat [cityName]
 ```
 
+Alternatively, if you don't want to install it globally, you can just use:
+
+```bash
+npx salat
+```
+
 `City name should be provided the same way it's written in the cities.json`
 
 ## Output
