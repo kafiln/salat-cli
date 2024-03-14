@@ -1,5 +1,4 @@
-const { JSDOM } = require("jsdom");
-
+const domino = require("domino");
 const prayers = require("./data/prayers.json");
 const chalk = require("chalk");
 const { API_URL, DEFAULT_CITY } = require("./constants");
@@ -37,8 +36,9 @@ module.exports.getData = async (cityId) => {
 };
 
 module.exports.parsePrayerTimesFromResponse = (response) => {
-  const dom = new JSDOM(response);
-  const tds = dom.window.document.getElementsByTagName("td");
+  const window = domino.createWindow(response);
+  const document = window.document;
+  const tds = document.getElementsByTagName("td");
 
   let j = 0;
   for (let i = 1; i < tds.length; i += 2) {
