@@ -8,12 +8,12 @@ const {
   getCityName,
   displayResult,
   getData,
-  parsePrayerTimesFromResponse
+  parsePrayerTimesFromResponse,
 } = require("./utils.js");
-process.env.NODE_TLS_REJECT_UNAUTHORIZED="0"
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 // Logging functioin
-const green = msg => console.log(chalk.green(msg));
+const green = (msg) => console.log(chalk.green(msg));
 
 // Project's data
 const { BANNER, LOCAL_STORAGE_PATH } = require("./constants");
@@ -31,7 +31,13 @@ const main = async () => {
   green(BANNER);
 
   const storageKey = `${cityName.toLowerCase()}_${new Date().toLocaleDateString()}`;
-  const item = localStorage.getItem(storageKey);
+  let item = localStorage.getItem(storageKey);
+
+  // Disable localStorage for local development
+  if (process.env.NODE_ENV === "development") {
+    console.log("development mode: localStorage is disabled");
+    item = null;
+  }
   let prayers;
 
   if (item) {
@@ -43,12 +49,13 @@ const main = async () => {
     } catch (ex) {
       //TODO: Use a more descriptif error message
       console.error("Something went wrong!");
-      console.log(ex)
+      console.log(ex);
       // console.log(ex);
       return;
     }
   }
 
+  console.clear();
   displayResult(prayers, cityName);
 };
 

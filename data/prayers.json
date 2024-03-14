@@ -1,20 +1,20 @@
 [
-    {
-        "Prayer": "Fajr"
-    },
-    {
-        "Prayer": "Chorouq"
-    },
-    {
-        "Prayer": "Dhuhr"
-    },
-    {
-        "Prayer": "Asr"
-    },
-    {
-        "Prayer": "Maghrib"
-    },
-    {
-        "Prayer": "Ishae"
-    }
+  {
+    "prayer": "Fajr"
+  },
+  {
+    "prayer": "Chorouq"
+  },
+  {
+    "prayer": "Dhuhr"
+  },
+  {
+    "prayer": "Asr"
+  },
+  {
+    "prayer": "Maghrib"
+  },
+  {
+    "prayer": "Ishae"
+  }
 ]
