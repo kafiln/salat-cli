@@ -22,15 +22,16 @@ jobs:
           CURRENT_VERSION=$(jq -r '.version' package.json)
           LAST_PUBLISHED_VERSION=$(npm show ${{ env.PACKAGE_NAME }} version)
           if [ "$CURRENT_VERSION" == "$LAST_PUBLISHED_VERSION" ]; then
-            echo "::set-output name=version_changed::false"
+            echo "version_changed=false" >> $GITHUB_ENV
+            exit 1
           else
-            echo "::set-output name=version_changed::true"
+          echo "version_changed=true" >> $GITHUB_ENV
           fi
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install
