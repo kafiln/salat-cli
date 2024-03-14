@@ -1,4 +1,7 @@
 name: Publish to npm on Merge to Master
+env:
+  PACKAGE_NAME: "salat"
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 on:
   push:
@@ -13,6 +16,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Check if package version changed
+        id: check_version
+        run: |
+          CURRENT_VERSION=$(jq -r '.version' package.json)
+          LAST_PUBLISHED_VERSION=$(npm show ${{ env.PACKAGE_NAME }} version)
+          if [ "$CURRENT_VERSION" == "$LAST_PUBLISHED_VERSION" ]; then
+            echo "::set-output name=version_changed::false"
+          else
+            echo "::set-output name=version_changed::true"
+          fi
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -24,4 +38,4 @@ jobs:
       - name: Publish to npm
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
