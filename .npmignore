@@ -1,3 +1,5 @@
 /images
-_config
+_config.yml
 README.md
+/storage
+.vscode/settings.json
