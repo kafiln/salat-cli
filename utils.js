@@ -5,7 +5,6 @@ const chalk = require("chalk");
 const { API_URL, DEFAULT_CITY } = require("./constants");
 const { NOT_FOUND_ERROR } = require("./constants");
 const fetch = require("node-fetch");
-const cheerio = require("cheerio");
 
 const error = (msg) => console.log(chalk.red(msg));
 
