@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - name: Check if package version changed
         id: check_version
         run: |
@@ -23,8 +24,6 @@ jobs:
           else
           echo "version_changed=true" >> $GITHUB_ENV
           fi
-
-      - uses: actions/checkout@v4
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
