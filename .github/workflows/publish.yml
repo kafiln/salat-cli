@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Check if package version changed
         id: check_version
         run: |
@@ -27,15 +24,13 @@ jobs:
           echo "version_changed=true" >> $GITHUB_ENV
           fi
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-
-      - name: Install dependencies
-        run: npm ci --production
-
-      - name: Publish to npm
-        run: npm publish
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci --production
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
