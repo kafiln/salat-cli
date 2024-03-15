@@ -9,4 +9,5 @@ jobs:
 
     steps:
       - name: Print NPM_TOKEN
-        run: echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}"
+        run: |
+          echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}"
