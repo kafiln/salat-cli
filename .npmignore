@@ -2,3 +2,4 @@
 _config.yml
 /storage
 .vscode/settings.json
+.github/*
