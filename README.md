@@ -1,8 +1,10 @@
 # Salat [![npm version](https://badge.fury.io/js/salat.svg)](https://badge.fury.io/js/salat)
 
+PLEASE SUPPORT THIS REPO WITH A STAR ⭐🌟💫
+
 ## Description
 
-> Daily prayer time in all the cities in [Morocco](https://www.google.com/search?q=morocco) :morocco:, directly in your terminal, at the tip of your fingers
+> Daily prayer time in all the cities in [Morocco](https://www.google.com/search?q=morocco) , directly in your terminal, at the tip of your fingers
 
 **A stupid simple Command line utility to get the daily prayers time for all the citiy in Morocco**
 
@@ -21,21 +23,7 @@ npx salat "el jadida"
 npx salat "L'msid"
 ```
 
-You can also install it globally
-
-```bash
-# Install
-
-$ npm i -g salat
-
-# Run with default city
-
-$ salat
-
-# Run with custom city
-
-$ salat [cityName]
-```
+## City List
 
 This is an exhaustive list of the supported cities :
 
@@ -231,6 +219,22 @@ This is an exhaustive list of the supported cities :
 - Zayou
 - Zerhoune
 
+Alternatively You can also install it globally
+
+```bash
+# Install
+
+$ npm i -g salat
+
+# Run with default city
+
+$ salat
+
+# Run with custom city
+
+$ salat [cityName]
+```
+
 ## Output
 
 ```bash
@@ -259,7 +263,7 @@ This is an exhaustive list of the supported cities :
 - [x] Use localstorage-like api for caching purposes
 - [ ] Improve performance
 - [ ] Add unit tests
-- [ ] Add a documentation site
+- [x] Add a documentation site
 - [ ] Command to set the default city
 - [ ] Command to display the list of available cities
 - [ ] Command to display the time table for the whole month
@@ -268,4 +272,4 @@ This is an exhaustive list of the supported cities :
 
 This project is under the MIT license.
 
-### Built With :heart: in Ramadan
+### Built With 💖 in Ramadan
