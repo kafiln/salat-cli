@@ -1,0 +1,12 @@
+name: Debug NPM_TOKEN
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print NPM_TOKEN
+        run: echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}"
