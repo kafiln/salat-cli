@@ -1,4 +1,4 @@
-const API_URL = "http://www.habous.gov.ma/prieres/horaire-api.php";
+const API_URL = "https://habous.gov.ma/prieres/horaire_hijri_2.php";
 
 const BANNER = ``;
 
@@ -10,9 +10,9 @@ const NOT_FOUND_ERROR = `
   `;
 
 module.exports = {
-  API_URL,
-  BANNER,
-  NOT_FOUND_ERROR,
-  DEFAULT_CITY: "Marrakech",
-  LOCAL_STORAGE_PATH: "./storage",
+    API_URL,
+    BANNER,
+    NOT_FOUND_ERROR,
+    DEFAULT_CITY: "Marrakech",
+    LOCAL_STORAGE_PATH: "./storage",
 };
