@@ -4,6 +4,7 @@ import {
     getCityId,
     getCityName,
     getData,
+    getNextPrayer,
     parsePrayerTimesFromResponse,
     tConv24,
 } from "#utils";
@@ -92,18 +93,37 @@ const App: React.FC<AppProps> = ({ cityNameArg }) => {
 			<Box marginBottom={1}>
 				<Text>📅 {format(new Date(), "PPPP")}</Text>
 			</Box>
-			<Box flexDirection="column">
-				{Object.entries(prayerTimes).map(([prayer, time]) => (
-					<Box key={prayer}>
-						<Box width={10}>
-							<Text color="white">{prayer}</Text>
-						</Box>
-						<Box marginRight={2}>
-							<Text>--&gt;</Text>
-						</Box>
-						<Text color="green">{tConv24(time)}</Text>
+			{prayerTimes && (
+				<Box borderStyle="round" borderColor="cyan" paddingX={1} marginBottom={1} flexDirection="column">
+					<Box>
+						<Text bold color="cyan">Next Prayer: </Text>
+						<Text bold>{getNextPrayer(prayerTimes, new Date()).prayer}</Text>
 					</Box>
-				))}
+					<Box>
+						<Text>Time: </Text>
+						<Text>{tConv24(getNextPrayer(prayerTimes, new Date()).time)}</Text>
+					</Box>
+					<Box>
+						<Text color="yellow">Remaining: </Text>
+						<Text color="yellow">{getNextPrayer(prayerTimes, new Date()).timeLeft}</Text>
+					</Box>
+				</Box>
+			)}
+			<Box flexDirection="column">
+				{Object.entries(prayerTimes).map(([prayer, time]) => {
+					const isNext = prayer === getNextPrayer(prayerTimes!, new Date()).prayer;
+					return (
+						<Box key={prayer}>
+							<Box width={10}>
+								<Text color={isNext ? "cyan" : "white"} bold={isNext}>{prayer}</Text>
+							</Box>
+							<Box marginRight={2}>
+								<Text color={isNext ? "cyan" : "gray"}>--&gt;</Text>
+							</Box>
+							<Text color={isNext ? "yellow" : "green"} bold={isNext}>{tConv24(time)}</Text>
+						</Box>
+					);
+				})}
 			</Box>
 		</Box>
 	);
