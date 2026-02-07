@@ -4,6 +4,7 @@
 
 import { citiesCommand } from "#commands/cities";
 import { guideCommand } from "#commands/guide";
+import { hijriCommand } from "#commands/hijri";
 import { timesCommand } from "#commands/times";
 import { Command } from "commander";
 
@@ -16,6 +17,7 @@ program
   .description(pkg.description)
   .version(pkg.version)
   .addCommand(timesCommand, { isDefault: true })
+  .addCommand(hijriCommand)
   .addCommand(guideCommand)
   .addCommand(citiesCommand);
 
