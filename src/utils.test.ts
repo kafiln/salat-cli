@@ -1,7 +1,8 @@
 
 import * as constants from '#constants';
 import { City } from '#types';
-import { getCityId, getCityName, parsePrayerTimesFromResponse } from '#utils';
+import { getCityId, getCityName, getNextPrayer, parsePrayerTimesFromResponse } from '#utils';
+import { parseISO } from 'date-fns';
 import { describe, expect, it, vi } from 'vitest';
 
 // Mock cities data
@@ -90,6 +91,49 @@ describe('utils', () => {
             // checking if it returns an object with times
             expect(results).toHaveProperty('Fajr');
             expect(results).toHaveProperty('Dhuhr');
+        });
+    });
+
+    describe('getNextPrayer', () => {
+        const prayerTimes = {
+            Fajr: "05:30",
+            Chorouq: "07:00",
+            Dhuhr: "12:30",
+            Asr: "15:45",
+            Maghrib: "18:20",
+            Ishae: "19:50"
+        };
+
+        it('should return Fajr if current time is before Fajr', () => {
+            const now = parseISO('2026-02-07T04:00:00');
+            const result = getNextPrayer(prayerTimes, now);
+            expect(result.prayer).toBe('Fajr');
+            expect(result.time).toBe('05:30');
+            expect(result.timeLeft).toBe('01:30:00');
+        });
+
+        it('should return Dhuhr if current time is between Chorouq and Dhuhr', () => {
+            const now = parseISO('2026-02-07T10:00:00');
+            const result = getNextPrayer(prayerTimes, now);
+            expect(result.prayer).toBe('Dhuhr');
+            expect(result.time).toBe('12:30');
+            expect(result.timeLeft).toBe('02:30:00');
+        });
+
+        it('should return tomorrow Fajr if current time is after Ishae', () => {
+            const now = parseISO('2026-02-07T21:00:00');
+            const result = getNextPrayer(prayerTimes, now);
+            expect(result.prayer).toBe('Fajr');
+            expect(result.time).toBe('05:30');
+            // From 21:00 to 05:30 next day is 8 hours and 30 minutes
+            expect(result.timeLeft).toBe('08:30:00');
+        });
+
+        it('should handle seconds correctly in timeLeft', () => {
+            const now = parseISO('2026-02-07T12:29:45');
+            const result = getNextPrayer(prayerTimes, now);
+            expect(result.prayer).toBe('Dhuhr');
+            expect(result.timeLeft).toBe('00:00:15');
         });
     });
 });

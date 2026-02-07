@@ -1,5 +1,6 @@
 import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "#constants";
-import { City, PrayerDef, PrayerTimes } from "#types";
+import { City, PrayerName, PrayerTimes } from "#types";
+import { addDays, differenceInSeconds, format, parse } from "date-fns";
 import domino from "domino";
 import fetch from "node-fetch";
 import prayersData from "./data/prayers.json" with { type: "json" };
@@ -37,7 +38,7 @@ export const parsePrayerTimesFromResponse = (response: string): PrayerTimes => {
   const document = window.document;
   const tds = document.getElementsByTagName("td");
 
-  const prayers: (PrayerDef & { time?: string })[] = JSON.parse(
+  const prayers: { prayer: PrayerName; time?: string }[] = JSON.parse(
     JSON.stringify(prayersData)
   );
 
@@ -56,14 +57,46 @@ export const parsePrayerTimesFromResponse = (response: string): PrayerTimes => {
   }, {} as PrayerTimes);
 };
 
+
 export function tConv24(time24: string): string {
-  const [hours, minutes] = time24.split(":");
-  const hour = Number(hours);
-  const formattedHour = hour % 12 || 12;
-  const formattedHourWithZero = (formattedHour + "").padStart(2, "0");
-  const formattedMinutes = minutes.padStart(2, "0");
-  const formattedTime = `${formattedHourWithZero}:${formattedMinutes}`;
-  const ampm = hour < 12 ? "AM" : "PM";
-  return `${formattedTime} ${ampm}`;
+  const date = parse(time24, "HH:mm", new Date());
+  return format(date, "hh:mm a");
 }
 
+export function getNextPrayer(
+  prayerTimes: PrayerTimes,
+  now: Date
+): { prayer: string; time: string; timeLeft: string } {
+  const prayerNames: PrayerName[] = ["Fajr", "Chorouq", "Dhuhr", "Asr", "Maghrib", "Ishae"];
+
+  const prayersWithDates = prayerNames.map((name) => {
+    const time = prayerTimes[name];
+    const prayerDate = parse(time, "HH:mm", now);
+    return { name, date: prayerDate, time };
+  });
+
+  let next = prayersWithDates.find((p) => p.date > now);
+
+  if (!next) {
+    const firstPrayerName = prayerNames[0];
+    const firstTime = prayerTimes[firstPrayerName];
+    const tomorrowFajr = addDays(parse(firstTime, "HH:mm", now), 1);
+    next = { name: firstPrayerName, date: tomorrowFajr, time: firstTime };
+  }
+
+  const diffSec = differenceInSeconds(next.date, now);
+  const h = Math.floor(diffSec / 3600);
+  const m = Math.floor((diffSec % 3600) / 60);
+  const s = diffSec % 60;
+
+  const timeLeft = `${String(h).padStart(2, "0")}:${String(m).padStart(
+    2,
+    "0"
+  )}:${String(s).padStart(2, "0")}`;
+
+  return {
+    prayer: next.name,
+    time: next.time,
+    timeLeft,
+  };
+}

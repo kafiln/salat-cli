@@ -10,6 +10,7 @@ import {
 import { Box, Text, useApp } from "ink";
 import React, { useEffect, useState } from "react";
 // @ts-ignore
+import { format } from "date-fns";
 import { LocalStorage } from "node-localstorage";
 import citiesData from "./data/cities.json" with { type: "json" };
 
@@ -33,7 +34,7 @@ const App: React.FC<AppProps> = ({ cityNameArg }) => {
 				const name = getCityName(cityNameArg, cities);
 				setResolvedCityName(name);
 
-				const storageKey = `${name.toLowerCase()}_${new Date().toLocaleDateString()}`;
+				const storageKey = `${name.toLowerCase()}_${format(new Date(), "yyyy-MM-dd")}`;
 				let item = localStorage.getItem(storageKey);
 
 				// Disable localStorage for local development
@@ -89,7 +90,7 @@ const App: React.FC<AppProps> = ({ cityNameArg }) => {
 				<Text>🧭 {resolvedCityName}, Morocco</Text>
 			</Box>
 			<Box marginBottom={1}>
-				<Text>📅 {new Date().toDateString()}</Text>
+				<Text>📅 {format(new Date(), "PPPP")}</Text>
 			</Box>
 			<Box flexDirection="column">
 				{Object.entries(prayerTimes).map(([prayer, time]) => (

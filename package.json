@@ -12,6 +12,7 @@
   },
   "type": "module",
   "dependencies": {
+    "date-fns": "^4.1.0",
     "domino": "^2.1.6",
     "ink": "^6.6.0",
     "node-fetch": "^3.3.2",
