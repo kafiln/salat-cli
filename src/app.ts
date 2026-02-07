@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
 // Project's dependencies
-import chalk from "chalk";
 import {
   displayResult,
   getCityId,
   getCityName,
   getData,
   parsePrayerTimesFromResponse,
-} from "./utils";
+} from "#utils";
+import chalk from "chalk";
 
 // Project's data
-import { BANNER, LOCAL_STORAGE_PATH } from "./constants";
-import citiesData from "./data/cities.json";
-import { City, PrayerTimes } from "./types";
+import { BANNER, LOCAL_STORAGE_PATH } from "#constants";
+import { City, PrayerTimes } from "#types";
+import citiesData from "./data/cities.json" with { type: "json" };
 
 // Setting up localStorage
 import { LocalStorage } from "node-localstorage";

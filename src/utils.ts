@@ -1,11 +1,11 @@
+import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "#constants";
+import { City, PrayerDef, PrayerTimes } from "#types";
 import chalk from "chalk";
 import domino from "domino";
 import fetch from "node-fetch";
-import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "./constants";
-import prayersData from "./data/prayers.json";
-import { City, PrayerDef, PrayerTimes } from "./types";
+import prayersData from "./data/prayers.json" with { type: "json" };
 
-const error = (msg: string) => console.log(chalk.red(msg));
+const error = (msg: string) => console.error(chalk.red(msg));
 
 export const getCityName = (arg: string | undefined, cities: City[]): string => {
   if (arg == null) return DEFAULT_CITY;

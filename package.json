@@ -1,20 +1,24 @@
 {
   "name": "salat",
-  "version": "3.3.0",
+  "version": "3.3.1",
+  "imports": {
+    "#*": "./dist/*.js"
+  },
   "description": "Daily Moroccan prayers time, right in your console, at the tip of your fingers",
   "homepage": "https://kafiln.github.io/salat-cli/",
   "main": "dist/app.js",
   "bin": {
     "salat": "dist/app.js"
   },
+  "type": "module",
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^5.3.0",
     "domino": "^2.1.6",
-    "node-fetch": "^2.7.0",
-    "node-localstorage": "^1.3.1"
+    "node-fetch": "^3.3.2",
+    "node-localstorage": "^3.0.5"
   },
   "scripts": {
-    "dev": "ts-node src/app.ts",
+    "dev": "node --no-warnings --loader ts-node/esm src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
     "prestart": "npm run build",

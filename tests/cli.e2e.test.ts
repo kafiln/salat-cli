@@ -4,6 +4,12 @@ import path from 'path';
 import util from 'util';
 import { describe, expect, it } from 'vitest';
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const execPromise = util.promisify(exec);
 const appPath = path.join(__dirname, '../src/app.ts');
 
@@ -11,7 +17,7 @@ describe('CLI E2E', () => {
     it('should run and display prayer times for default city', async () => {
         // Running via ts-node to avoid build step dependency in tests
         // using npx ts-node might be slower but works without pre-build
-        const { stdout, stderr } = await execPromise(`npx ts-node ${appPath}`);
+        const { stdout, stderr } = await execPromise(`node --no-warnings --loader ts-node/esm ${appPath}`);
         
         expect(stderr).toBe('');
         expect(stdout).toContain('Marrakech'); // Default city
@@ -20,14 +26,14 @@ describe('CLI E2E', () => {
     }, 10000); // increase timeout for CLI execution
 
     it('should run and display prayer times for a specific city', async () => {
-        const { stdout } = await execPromise(`npx ts-node ${appPath} "Rabat"`);
+        const { stdout } = await execPromise(`node --no-warnings --loader ts-node/esm ${appPath} "Rabat"`);
         
         expect(stdout).toContain('Rabat');
         expect(stdout).toContain('Fajr');
     }, 10000);
 
     it('should handle invalid city gracefully', async () => {
-        const { stdout } = await execPromise(`npx ts-node ${appPath} "InvalidCity"`);
+        const { stdout } = await execPromise(`node --no-warnings --loader ts-node/esm ${appPath} "InvalidCity"`);
         
         // As per utils.ts, it returns default city (Casablanca) and logs error (NOT_FOUND_ERROR)
         // Note: The error is logged to console.log, so it might appear in stdout or just be visible.

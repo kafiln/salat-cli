@@ -1,8 +1,8 @@
 
+import * as constants from '#constants';
+import { City } from '#types';
+import { getCityId, getCityName, parsePrayerTimesFromResponse } from '#utils';
 import { describe, expect, it, vi } from 'vitest';
-import * as constants from './constants';
-import { City } from './types';
-import { getCityId, getCityName, parsePrayerTimesFromResponse } from './utils';
 
 // Mock cities data
 const mockCities: City[] = [
@@ -22,8 +22,8 @@ describe('utils', () => {
         });
 
         it('should return default city and log error if city does not exist', () => {
-            // Spy on console.log using vitest
-            const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+            // Spy on console.error using vitest
+            const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
             
             expect(getCityName('UnknownCity', mockCities)).toBe(constants.DEFAULT_CITY);
             
