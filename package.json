@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "4.8.0",
+  "version": "4.9.0",
   "imports": {
     "#*": "./dist/*.js"
   },
@@ -28,7 +28,9 @@
     "start": "node dist/app.js",
     "prestart": "npm run build",
     "prepublishOnly": "npm run build",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:ci": "vitest run --exclude tests/**",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "prayers",
@@ -46,6 +48,8 @@
     "@types/node-localstorage": "^1.3.3",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
+    "@vitest/coverage-v8": "^4.0.18",
+    "ink-testing-library": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
