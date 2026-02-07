@@ -1,12 +1,12 @@
 import { LOCAL_STORAGE_PATH } from "#constants";
 import { City, PrayerTimes } from "#types";
 import {
-    getCityId,
-    getCityName,
-    getData,
-    getNextPrayer,
-    parsePrayerTimesFromResponse,
-    tConv24,
+	getCityId,
+	getCityName,
+	getData,
+	getNextPrayer,
+	parsePrayerTimesFromResponse,
+	tConv24,
 } from "#utils";
 import { Box, Text, useApp } from "ink";
 import React, { useEffect, useState } from "react";
@@ -20,14 +20,24 @@ const localStorage = new LocalStorage(LOCAL_STORAGE_PATH);
 
 interface AppProps {
 	cityNameArg?: string;
+	once?: boolean;
 }
 
-const App: React.FC<AppProps> = ({ cityNameArg }) => {
+const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
 	const { exit } = useApp();
 	const [prayerTimes, setPrayerTimes] = useState<PrayerTimes | null>(null);
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [resolvedCityName, setResolvedCityName] = useState<string>("");
+	const [currentTime, setCurrentTime] = useState<Date>(new Date());
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setCurrentTime(new Date());
+		}, 1000);
+
+		return () => clearInterval(timer);
+	}, []);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -63,7 +73,7 @@ const App: React.FC<AppProps> = ({ cityNameArg }) => {
 	}, [cityNameArg]);
 
 	useEffect(() => {
-		if (!loading && (prayerTimes || error)) {
+		if (once && !loading && (prayerTimes || error)) {
 			// Small delay to ensure render happens
 			// Ink might need a tick to flush the output to stdout
 			const timer = setTimeout(() => {
@@ -71,7 +81,7 @@ const App: React.FC<AppProps> = ({ cityNameArg }) => {
 			}, 100);
 			return () => clearTimeout(timer);
 		}
-	}, [loading, prayerTimes, error, exit]);
+	}, [once, loading, prayerTimes, error, exit]);
 
 	if (loading) {
 		return <Text>Loading prayer times...</Text>;
@@ -91,27 +101,27 @@ const App: React.FC<AppProps> = ({ cityNameArg }) => {
 				<Text>🧭 {resolvedCityName}, Morocco</Text>
 			</Box>
 			<Box marginBottom={1}>
-				<Text>📅 {format(new Date(), "PPPP")}</Text>
+				<Text>📅 {format(currentTime, "PPPP")}</Text>
 			</Box>
 			{prayerTimes && (
 				<Box borderStyle="round" borderColor="cyan" paddingX={1} marginBottom={1} flexDirection="column">
 					<Box>
 						<Text bold color="cyan">Next Prayer: </Text>
-						<Text bold>{getNextPrayer(prayerTimes, new Date()).prayer}</Text>
+						<Text bold>{getNextPrayer(prayerTimes, currentTime).prayer}</Text>
 					</Box>
 					<Box>
 						<Text>Time: </Text>
-						<Text>{tConv24(getNextPrayer(prayerTimes, new Date()).time)}</Text>
+						<Text>{tConv24(getNextPrayer(prayerTimes, currentTime).time)}</Text>
 					</Box>
 					<Box>
 						<Text color="yellow">Remaining: </Text>
-						<Text color="yellow">{getNextPrayer(prayerTimes, new Date()).timeLeft}</Text>
+						<Text color="yellow">{getNextPrayer(prayerTimes, currentTime).timeLeft}</Text>
 					</Box>
 				</Box>
 			)}
 			<Box flexDirection="column">
 				{Object.entries(prayerTimes).map(([prayer, time]) => {
-					const isNext = prayer === getNextPrayer(prayerTimes!, new Date()).prayer;
+					const isNext = prayer === getNextPrayer(prayerTimes!, currentTime).prayer;
 					return (
 						<Box key={prayer}>
 							<Box width={10}>

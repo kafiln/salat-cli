@@ -5,9 +5,10 @@ import React from "react";
 import App from "./ui.js"; // Note the .js extension for ESM imports
 // Project's setup
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-const args = process.argv;
-const cityNameArg = args[2];
+const args = process.argv.slice(2);
+const once = args.includes("-1");
+const cityNameArg = args.find((arg) => !arg.startsWith("-"));
 const main = () => {
-    render(React.createElement(App, { cityNameArg }));
+    render(React.createElement(App, { cityNameArg, once }));
 };
 main();
