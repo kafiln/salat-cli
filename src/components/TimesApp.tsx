@@ -1,9 +1,8 @@
+import { useSalat } from "#hooks/useSalat";
 import { getNextPrayer, tConv24 } from "#services/utils";
+import { format } from "date-fns";
 import { Box, Text } from "ink";
 import React from "react";
-// @ts-ignore
-import { useSalat } from "#hooks/useSalat";
-import { format } from "date-fns";
 
 interface AppProps {
 	cityNameArg?: string;
