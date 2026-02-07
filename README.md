@@ -1,275 +1,94 @@
-# Salat [![npm version](https://badge.fury.io/js/salat.svg)](https://badge.fury.io/js/salat)
+# 🧭 salat-cli
 
-PLEASE SUPPORT THIS REPO WITH A STAR ⭐🌟💫
+> Daily Moroccan prayers time, right in your console, at the tip of your fingers. ✨
 
-## Description
+A modern, visually rich CLI for checking prayer times in Morocco, built with **React** and **Ink**.
 
-> Daily prayer time in all the cities in [Morocco](https://www.google.com/search?q=morocco) , directly in your terminal, at the tip of your fingers
+[![npm version](https://img.shields.io/npm/v/salat.svg)](https://www.npmjs.com/package/salat)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**A stupid simple Command line utility to get the daily prayers time for all the citiy in Morocco**
+---
 
-The source of the data is [the Moroccan Ministery Website](http://www.habous.gov.ma)
+## 🚀 Features
 
-## Getting started
+- **Live Countdown**: "Remaining" time updates every second in real-time.
+- **Rich UI**: Beautiful terminal interface with colors and borders.
+- **Morocco Focused**: Supports 190+ cities across Morocco.
+- **Smart Caching**: Local storage caching to minimize API calls.
+- **Developer Friendly**: Built with TypeScript and Commander.js.
 
-```bash
-npx salat [cityName]
-```
-
-Please note that if the cityName contains space of `'` you need to use quotes, example
-
-```bash
-npx salat "el jadida"
-npx salat "L'msid"
-```
-
-## City List
-
-This is an exhaustive list of the supported cities :
-
-- Agadir
-- Ahfir
-- Ain Aouda
-- Aïn Chaïr
-- Ait El Kak
-- Ait Ourir
-- Akayouar
-- Akdal Amelchil
-- Akdez
-- Akhefnir
-- Akka
-- Aknoul
-- Akoudal Amelchil Midelt
-- Amkala
-- Amsmrir
-- Araich
-- Arbaoua
-- Arfoud
-- Asa
-- Askin
-- Asoul
-- Assila
-- Azemmour
-- Azilal
-- Azrou
-- Bab Bared
-- Ben Ahmed
-- Ben Slimane
-- Bengrir
-- Beni Adrar
-- Beni Ansar
-- Beni Mellal
-- Beni Tejit
-- Berkane
-- Berrchid
-- Bir Anzaran
-- Bir Kandour
-- Bouanan
-- Bouarfa
-- Bouikra
-- Bouizkaren
-- Boujdour
-- Boukrae
-- Boulmane
-- Boumalen Dadas
-- Bourd
-- Bouskoura
-- Bouznika
-- Casablanca
-- Chefchaouan
-- Chichaoua
-- Dakhla
-- Debdou
-- Demnat
-- Deryouche
-- El Brouj
-- El Gara
-- El Hajeb
-- El Jabha
-- El Jadida
-- El Kasba
-- El Mahbes
-- El Menzel
-- Enif
-- Erich
-- Errachidia
-- Essaouira
-- Ezak
-- Fem Lehsan
-- Fem Zkid
-- Ferkhana
-- Fes
-- Fezouane
-- Figuig
-- Fnideq
-- Fquih Ben Salah
-- Geltat Zamour
-- Guelmim
-- Guercif
-- Hoceima
-- Igherem
-- Ikes
-- Imelchil
-- Imin Telat
-- Imntanout
-- Imouzzer Kandar
-- Jerada
-- Kalaat Megouna
-- Kalaat Sraghna
-- Kares
-- Kariat Ba Mohammed
-- Kasbah Tadla
-- Katara
-- Kelmima
-- Kénitra
-- Ketama
-- Khemis Sidi Abd Jelil
-- Khemis Zemamra
-- Khémissat
-- Khenifra
-- Khouribga
-- Ksar El Kebir
-- Ksar El Sghir
-- Ksar Ich
-- L'msid
-- Laayoune
-- Laayoune Sidi Mellouk
-- Lagouira
-- Marrakech
-- Martil
-- Mediek
-- Meknes
-- Melilla
-- Meskoura
-- Metmata
-- Midelt
-- Misour
-- Mohammedia
-- Moulay Bouaza
-- Moulay Bousselham
-- Moulay Yacoub
-- Nador
-- Oualidia
-- Ouazane
-- Oued Amlil
-- Oued Law
-- Oued Zam
-- Oujda
-- Oulad Ayad
-- Oulad Tayma
-- Oulmes
-- Ourzazate
-- Ousered
-- Rabat
-- Ras Alma
-- Remani
-- Rhamna
-- Ribate El Kheir
-- Risani
-- Safi
-- Saïdia
-- Sebta
-- Sefrou
-- Selouane
-- Settat
-- Sidi Benour
-- Sidi Ghanem
-- Sidi Ifni
-- Sidi Kacém
-- Sidi Slimane
-- Sidi Yahya Gharb
-- Smara
-- Souq Arbiâ Gharb
-- Tafntan
-- Tafougalt
-- Tafraouet
-- Tahla
-- Tahla
-- Talouine
-- Talsint
-- Tamslouhet
-- Tanger
-- Tantan
-- Taounat
-- Taourirt
-- Tarfaya
-- Taroudant
-- Tasltanet
-- Tata
-- Taza
-- Tazarin
-- Tefariti
-- Temnar
-- Tendrara
-- Tenghir
-- Tenjedad
-- Tetouan
-- Tiflet
-- Tindit
-- Tisa
-- Tisenet
-- Tizi Ousli
-- Tiznit
-- Toulkoult
-- Yefrin
-- Yousofia
-- Zagoura
-- Zaouiat Ahansal
-- Zaouiat Moulay Ibrahim
-- Zayou
-- Zerhoune
-
-Alternatively You can also install it globally
+## 📦 Installation
 
 ```bash
-# Install
-
-$ npm i -g salat
-
-# Run with default city
-
-$ salat
-
-# Run with custom city
-
-$ salat [cityName]
+npm install -g salat
 ```
 
-## Output
+## 🛠 Usage
+
+Simply run `salat` to see prayer times for the default city (Marrakech), or specify a city.
 
 ```bash
-# The programs prints to the console the prayers' time for the current day in the default city as shown bellow:
+# Get prayer times for the default city
+salat
+
+# Get prayer times for a specific city
+salat times Rabat
+
+# Run once and exit (no live timer)
+salat -1
+
+# Show a rich visual guide
+salat guide
+
+# List all available cities
+salat cities
 ```
 
-![screen 1](images/screenShot1.png)
-![screen 2](images/screenShot2.png)
-![screen 3](images/screenShot3.png)
+### CLI Help
 
-## Change the default city
+```text
+Usage: salat [options] [command]
 
-- The default city is :heart: [Marrakech](https://www.google.com/search?q=marrakech) :heart:, set as a value for the `DEFAULT_CITY` variable in `./constants.js`
+Daily Moroccan prayers time, right in your console
 
-- You can change it by replacing `Marrakech` by your city name according to the values from `./data/cities.json`
+Options:
+  -V, --version           output the version number
+  -h, --help              display help for command
 
-## Help
+Commands:
+  times [options] [city]  Get prayer times for a city
+  guide                   Show a rich visual guide to using salat-cli
+  cities                  Display the list of available city names
+  help [command]          display help for command
+```
 
-- Please keep in mind that this is a work in progress in a very early stages, any help is appreciated and more than welcome.
+## 🏗 Dependencies
 
-- If you think this piece of code is anyhow useful, please feel free to `contribute`, `star` :star::star: and `share` 🙏 🙏
+This project is built on the shoulders of giants:
 
-## Todo
+- [**Ink**](https://github.com/vadimdemedes/ink) - React for interactive command-line apps.
+- [**Commander.js**](https://github.com/tj/commander) - The complete solution for node.js command-line interfaces.
+- [**date-fns**](https://date-fns.org/) - Modern JavaScript date utility library.
+- [**node-fetch**](https://github.com/node-fetch/node-fetch) - A light-weight module that brings `window.fetch` to Node.js.
+- [**domino**](https://github.com/fent/domino) - Server-side DOM implementation for parsing API responses.
+- [**node-localstorage**](https://github.com/lmaccherone/node-localstorage) - LocalStorage implementation for Node.js.
 
-- [x] Use a default city
-- [x] Use localstorage-like api for caching purposes
-- [ ] Improve performance
-- [ ] Add unit tests
-- [x] Add a documentation site
-- [ ] Command to set the default city
-- [ ] Command to display the list of available cities
-- [ ] Command to display the time table for the whole month
+## 🤝 Contributing
 
-## License
+Contributions are welcome! Whether it's a bug fix, a new feature, or better documentation.
 
-This project is under the MIT license.
+1.  **Fork** the project.
+2.  **Clone** your fork: `git clone https://github.com/kafiln/salat-cli.git`
+3.  **Install** dependencies: `npm install`
+4.  **Live Development**: `npm run dev`
+5.  **Build**: `npm run build`
+6.  **Test**: `npm test`
+7.  **Submit** a Pull Request.
 
-### Built With 💖 in Ramadan
+## ⭐ Show your support
+
+If this project helped you, please consider giving it a **Star** on GitHub! It means a lot.
+
+---
+
+Built with ❤️ by [Kafil NASDAMI](https://github.com/kafiln)
