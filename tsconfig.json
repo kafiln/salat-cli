@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
+      "#services/utils": ["./src/services/utils/index.ts"],
       "#*": ["./src/*"]
     },
     "jsx": "react-jsx"
