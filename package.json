@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "4.6.1",
+  "version": "4.6.2",
   "imports": {
     "#*": "./dist/*.js"
   },
