@@ -1,15 +1,13 @@
 import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "#constants";
-import chalk from "chalk";
 import domino from "domino";
 import fetch from "node-fetch";
 import prayersData from "./data/prayers.json" with { type: "json" };
-const error = (msg) => console.error(chalk.red(msg));
 export const getCityName = (arg, cities) => {
     if (arg == null)
         return DEFAULT_CITY;
     const index = getCityIndex(arg, cities);
     if (index === -1) {
-        error(NOT_FOUND_ERROR);
+        console.error(NOT_FOUND_ERROR);
         return DEFAULT_CITY;
     }
     return arg;
@@ -44,7 +42,7 @@ export const parsePrayerTimesFromResponse = (response) => {
         return acc;
     }, {});
 };
-function tConv24(time24) {
+export function tConv24(time24) {
     const [hours, minutes] = time24.split(":");
     const hour = Number(hours);
     const formattedHour = hour % 12 || 12;
@@ -54,12 +52,3 @@ function tConv24(time24) {
     const ampm = hour < 12 ? "AM" : "PM";
     return `${formattedTime} ${ampm}`;
 }
-export const displayResult = (prayers, city) => {
-    if (!prayers)
-        return;
-    console.log(` 🧭 ${city}, Morocco\n\n 📆 ${new Date().toDateString()}\n`);
-    Object.keys(prayers).forEach((key) => {
-        console.log(` ${chalk.cyan(key.padEnd(7, " "))} --> ${chalk.green(tConv24(prayers[key]))}`);
-    });
-    console.log("\n");
-};

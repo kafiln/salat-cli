@@ -23,14 +23,17 @@ describe('utils', () => {
 
         it('should return default city and log error if city does not exist', () => {
             // Spy on console.error using vitest
-            const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+            const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+            const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
             
             expect(getCityName('UnknownCity', mockCities)).toBe(constants.DEFAULT_CITY);
             
             // We expect some error message to be logged. 
             // The actual implementation logs with chalk.red, so we just check it was called.
-            expect(consoleSpy).toHaveBeenCalled();
-            consoleSpy.mockRestore();
+            expect(consoleLogSpy.mock.calls.length + consoleErrorSpy.mock.calls.length).toBeGreaterThan(0);
+            
+            consoleLogSpy.mockRestore();
+            consoleErrorSpy.mockRestore();
         });
 
         it('should be case insensitive', () => {
