@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "4.9.1",
+  "version": "4.9.2",
   "imports": {
     "#*": "./dist/*.js"
   },
@@ -19,6 +19,7 @@
     "date-fns": "^4.1.0",
     "domino": "^2.1.6",
     "ink": "^6.6.0",
+    "node-fetch": "^3.3.1",
     "node-localstorage": "^3.0.5",
     "react": "^19.2.4"
   },
