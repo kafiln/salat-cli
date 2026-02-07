@@ -1,5 +1,5 @@
-import { LOCAL_STORAGE_PATH } from "#constants";
-import { City, PrayerTimes } from "#types";
+import { LOCAL_STORAGE_PATH } from "#services/constants";
+import { City, PrayerTimes } from "#services/types";
 import {
 	getCityId,
 	getCityName,
@@ -7,13 +7,13 @@ import {
 	getNextPrayer,
 	parsePrayerTimesFromResponse,
 	tConv24,
-} from "#utils";
+} from "#services/utils";
 import { Box, Text, useApp } from "ink";
 import React, { useEffect, useState } from "react";
 // @ts-ignore
 import { format } from "date-fns";
 import { LocalStorage } from "node-localstorage";
-import citiesData from "./data/cities.json" with { type: "json" };
+import citiesData from "../data/cities.json" with { type: "json" };
 
 const cities: City[] = citiesData as City[];
 const localStorage = new LocalStorage(LOCAL_STORAGE_PATH);

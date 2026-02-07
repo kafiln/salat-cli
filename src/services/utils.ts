@@ -1,9 +1,9 @@
-import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "#constants";
-import { City, PrayerName, PrayerTimes } from "#types";
+import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "#services/constants";
+import { City, PrayerName, PrayerTimes } from "#services/types";
 import { addDays, differenceInSeconds, format, parse } from "date-fns";
 import domino from "domino";
 import fetch from "node-fetch";
-import prayersData from "./data/prayers.json" with { type: "json" };
+import prayersData from "../data/prayers.json" with { type: "json" };
 
 
 export const getCityName = (arg: string | undefined, cities: City[]): string => {

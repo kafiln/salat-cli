@@ -1,7 +1,7 @@
 
-import * as constants from '#constants';
-import { City } from '#types';
-import { getCityId, getCityName, getNextPrayer, parsePrayerTimesFromResponse } from '#utils';
+import * as constants from '#services/constants';
+import { City } from '#services/types';
+import { getCityId, getCityName, getNextPrayer, parsePrayerTimesFromResponse } from '#services/utils';
 import { parseISO } from 'date-fns';
 import { describe, expect, it, vi } from 'vitest';
 
