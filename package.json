@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "Daily Moroccan prayers time, right in your console, at the tip of your fingers",
   "homepage": "https://kafiln.github.io/salat-cli/",
   "main": "dist/app.js",
