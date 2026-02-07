@@ -3,7 +3,12 @@ import { City, PrayerName, PrayerTimes } from "#services/types";
 import { addDays, differenceInSeconds, format, parse } from "date-fns";
 import domino from "domino";
 import fetch from "node-fetch";
+import https from "node:https";
 import prayersData from "../data/prayers.json" with { type: "json" };
+
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false,
+});
 
 
 export const getCityName = (arg: string | undefined, cities: City[]): string => {
@@ -28,7 +33,8 @@ const getCityIndex = (city: string, cities: City[]): number =>
   cities.map((e) => e.name.toLowerCase()).indexOf(city.toLowerCase());
 
 export const getData = async (cityId: number): Promise<string> => {
-  const response = await fetch(`${API_URL}?ville=${cityId}`,{
+  const response = await fetch(`${API_URL}?ville=${cityId}`, {
+    agent: httpsAgent,
   });
   return await response.text();
 };
