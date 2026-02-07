@@ -3,8 +3,13 @@ export interface City {
   name: string;
 }
 
-
-export type PrayerName = "Fajr"| "Chorouq"| "Dhuhr"| "Asr"| "Maghrib"| "Ishae"
+export type PrayerName =
+  | "Fajr"
+  | "Chorouq"
+  | "Dhuhr"
+  | "Asr"
+  | "Maghrib"
+  | "Ishae";
 
 export interface PrayerTime {
   prayer: PrayerName;
@@ -12,3 +17,7 @@ export interface PrayerTime {
 }
 
 export type PrayerTimes = Record<PrayerName, string>;
+
+export interface HijriDate {
+  date: string;
+}

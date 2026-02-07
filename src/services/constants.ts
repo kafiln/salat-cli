@@ -1,4 +1,5 @@
 export const API_URL = "https://www.habous.gov.ma/prieres/horaire-api.php";
+export const HIJRI_API_URL = "https://apisearch.hadithm6.ma/api/hijridate";
 
 export const BANNER = ``;
 
