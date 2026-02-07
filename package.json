@@ -3,9 +3,9 @@
   "version": "3.1.1",
   "description": "Daily Moroccan prayers time, right in your console, at the tip of your fingers",
   "homepage": "https://kafiln.github.io/salat-cli/",
-  "main": "app.js",
+  "main": "dist/app.js",
   "bin": {
-    "salat": "app.js"
+    "salat": "dist/app.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -17,7 +17,8 @@
     "dev": "ts-node src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "prestart": "npm run build"
+    "prestart": "npm run build",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "prayers",

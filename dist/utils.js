@@ -31,7 +31,7 @@ const getCityId = (arg, cities) => {
 exports.getCityId = getCityId;
 const getCityIndex = (city, cities) => cities.map((e) => e.name.toLowerCase()).indexOf(city.toLowerCase());
 const getData = async (cityId) => {
-    const response = await (0, node_fetch_1.default)(`${constants_1.API_URL}?ville=${cityId}`);
+    const response = await (0, node_fetch_1.default)(`${constants_1.API_URL}?ville=${cityId}`, {});
     return await response.text();
 };
 exports.getData = getData;
