@@ -9,7 +9,7 @@ const program = new Command();
 program
     .name("salat")
     .description("Daily Moroccan prayers time, right in your console")
-    .version("4.4.0")
+    .version("4.6.0")
     .addCommand(timesCommand, { isDefault: true })
     .addCommand(guideCommand)
     .addCommand(citiesCommand);

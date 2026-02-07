@@ -11,6 +11,9 @@
     "salat": "dist/app.js"
   },
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "commander": "^14.0.3",
     "date-fns": "^4.1.0",
