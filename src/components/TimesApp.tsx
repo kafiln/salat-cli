@@ -1,22 +1,9 @@
-import { LOCAL_STORAGE_PATH } from "#services/constants";
-import { City, PrayerTimes } from "#services/types";
-import {
-	getCityId,
-	getCityName,
-	getData,
-	getNextPrayer,
-	parsePrayerTimesFromResponse,
-	tConv24,
-} from "#services/utils";
-import { Box, Text, useApp } from "ink";
-import React, { useEffect, useState } from "react";
+import { getNextPrayer, tConv24 } from "#services/utils";
+import { Box, Text } from "ink";
+import React from "react";
 // @ts-ignore
+import { useSalat } from "#hooks/useSalat";
 import { format } from "date-fns";
-import { LocalStorage } from "node-localstorage";
-import citiesData from "../data/cities.json" with { type: "json" };
-
-const cities: City[] = citiesData as City[];
-const localStorage = new LocalStorage(LOCAL_STORAGE_PATH);
 
 interface AppProps {
 	cityNameArg?: string;
@@ -24,64 +11,10 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
-	const { exit } = useApp();
-	const [prayerTimes, setPrayerTimes] = useState<PrayerTimes | null>(null);
-	const [error, setError] = useState<string | null>(null);
-	const [loading, setLoading] = useState<boolean>(true);
-	const [resolvedCityName, setResolvedCityName] = useState<string>("");
-	const [currentTime, setCurrentTime] = useState<Date>(new Date());
-
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setCurrentTime(new Date());
-		}, 1000);
-
-		return () => clearInterval(timer);
-	}, []);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const name = getCityName(cityNameArg, cities);
-				setResolvedCityName(name);
-
-				const storageKey = `${name.toLowerCase()}_${format(new Date(), "yyyy-MM-dd")}`;
-				let item = localStorage.getItem(storageKey);
-
-				// Disable localStorage for local development
-				if (process.env.NODE_ENV === "development") {
-					item = null;
-				}
-
-				if (item) {
-					setPrayerTimes(JSON.parse(item));
-				} else {
-					const cityId = getCityId(name, cities);
-					const data = await getData(cityId);
-					const prayers = parsePrayerTimesFromResponse(data);
-					setPrayerTimes(prayers);
-					localStorage.setItem(storageKey, JSON.stringify(prayers));
-				}
-			} catch (err: any) {
-				setError(err.message || "An error occurred");
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchData();
-	}, [cityNameArg]);
-
-	useEffect(() => {
-		if (once && !loading && (prayerTimes || error)) {
-			// Small delay to ensure render happens
-			// Ink might need a tick to flush the output to stdout
-			const timer = setTimeout(() => {
-				exit();
-			}, 100);
-			return () => clearTimeout(timer);
-		}
-	}, [once, loading, prayerTimes, error, exit]);
+	const { prayerTimes, error, loading, resolvedCityName, currentTime } = useSalat({
+		cityNameArg,
+		once,
+	});
 
 	if (loading) {
 		return <Text>Loading prayer times...</Text>;

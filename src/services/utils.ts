@@ -1,14 +1,8 @@
 import { API_URL, DEFAULT_CITY, NOT_FOUND_ERROR } from "#services/constants";
 import { City, PrayerName, PrayerTimes } from "#services/types";
-import { addDays, differenceInSeconds, format, parse } from "date-fns";
+import { addDays, format, intervalToDuration, parse } from "date-fns";
 import domino from "domino";
-import fetch from "node-fetch";
-import https from "node:https";
 import prayersData from "../data/prayers.json" with { type: "json" };
-
-const httpsAgent = new https.Agent({
-  rejectUnauthorized: false,
-});
 
 
 export const getCityName = (arg: string | undefined, cities: City[]): string => {
@@ -33,9 +27,7 @@ const getCityIndex = (city: string, cities: City[]): number =>
   cities.map((e) => e.name.toLowerCase()).indexOf(city.toLowerCase());
 
 export const getData = async (cityId: number): Promise<string> => {
-  const response = await fetch(`${API_URL}?ville=${cityId}`, {
-    agent: httpsAgent,
-  });
+  const response = await fetch(`${API_URL}?ville=${cityId}`);
   return await response.text();
 };
 
@@ -75,30 +67,21 @@ export function getNextPrayer(
 ): { prayer: string; time: string; timeLeft: string } {
   const prayerNames: PrayerName[] = ["Fajr", "Chorouq", "Dhuhr", "Asr", "Maghrib", "Ishae"];
 
-  const prayersWithDates = prayerNames.map((name) => {
-    const time = prayerTimes[name];
-    const prayerDate = parse(time, "HH:mm", now);
-    return { name, date: prayerDate, time };
-  });
+  const prayersWithDates = prayerNames.map((name) => ({
+    name,
+    time: prayerTimes[name],
+    date: parse(prayerTimes[name], "HH:mm", now),
+  }));
 
-  let next = prayersWithDates.find((p) => p.date > now);
+  const next = prayersWithDates.find((p) => p.date > now) || {
+    ...prayersWithDates[0],
+    date: addDays(prayersWithDates[0].date, 1),
+  };
 
-  if (!next) {
-    const firstPrayerName = prayerNames[0];
-    const firstTime = prayerTimes[firstPrayerName];
-    const tomorrowFajr = addDays(parse(firstTime, "HH:mm", now), 1);
-    next = { name: firstPrayerName, date: tomorrowFajr, time: firstTime };
-  }
-
-  const diffSec = differenceInSeconds(next.date, now);
-  const h = Math.floor(diffSec / 3600);
-  const m = Math.floor((diffSec % 3600) / 60);
-  const s = diffSec % 60;
-
-  const timeLeft = `${String(h).padStart(2, "0")}:${String(m).padStart(
-    2,
-    "0"
-  )}:${String(s).padStart(2, "0")}`;
+  const duration = intervalToDuration({ start: now, end: next.date });
+  const timeLeft = [duration.hours, duration.minutes, duration.seconds]
+    .map((v) => String(v ?? 0).padStart(2, "0"))
+    .join(":");
 
   return {
     prayer: next.name,
