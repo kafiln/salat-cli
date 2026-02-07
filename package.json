@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "4.6.0",
+  "version": "4.6.1",
   "imports": {
     "#*": "./dist/*.js"
   },
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "node --no-warnings --loader ts-node/esm src/app.ts",
-    "build": "tsc",
+    "build": "tsc && chmod +x dist/app.js",
     "start": "node dist/app.js",
     "prestart": "npm run build",
     "prepublishOnly": "npm run build",
