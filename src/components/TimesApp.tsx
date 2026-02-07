@@ -1,5 +1,5 @@
 import { useSalat } from "#hooks/useSalat";
-import { getNextPrayer, tConv24 } from "#services/utils";
+import { getNextPrayer, tConv24 } from "#services/utils/time";
 import { format } from "date-fns";
 import { Box, Text } from "ink";
 import React from "react";
