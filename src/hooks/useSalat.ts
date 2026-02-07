@@ -1,14 +1,11 @@
 import { LOCAL_STORAGE_PATH } from "#services/constants";
 import { City, PrayerTimes } from "#services/types";
-import {
-    getCityId,
-    getCityName,
-    getData,
-    parsePrayerTimesFromResponse,
-} from "#services/utils";
 import { useApp } from "ink";
 import { useEffect, useState } from "react";
 // @ts-ignore
+import { getData } from "#services/utils/api";
+import { getCityId, getCityName } from "#services/utils/city";
+import { parsePrayerTimesFromResponse } from "#services/utils/parser";
 import { format } from "date-fns";
 import { LocalStorage } from "node-localstorage";
 import citiesData from "../data/cities.json" with { type: "json" };
