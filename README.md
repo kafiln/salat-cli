@@ -6,6 +6,7 @@ A modern, visually rich CLI for checking prayer times in Morocco, built with **R
 
 [![npm version](https://img.shields.io/npm/v/salat.svg)](https://www.npmjs.com/package/salat)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/kafiln/salat-cli/graph/badge.svg?token=E6CULOJPAS)](https://codecov.io/gh/kafiln/salat-cli)
 
 ---
 
