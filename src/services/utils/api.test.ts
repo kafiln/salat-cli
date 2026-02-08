@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as constants from "../constants.js";
+import https from "https";
 
 vi.mock("node-fetch");
+vi.mock("https");
 
 import fetch from "node-fetch";
 import { getData } from "./api.js";
@@ -20,7 +22,12 @@ describe("api utils", () => {
 
       const result = await getData(1);
 
-      expect(fetch).toHaveBeenCalledWith(`${constants.API_URL}?ville=1`);
+      expect(fetch).toHaveBeenCalledWith(
+        `${constants.API_URL}?ville=1`,
+        expect.objectContaining({
+          agent: expect.any(Object),
+        })
+      );
       expect(result).toBe(mockResponse);
     });
 
