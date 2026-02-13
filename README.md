@@ -63,6 +63,10 @@ Commands:
   help [command]          display help for command
 ```
 
+## 📸 Screenshots
+
+![Screenshot 1](images/image.png)
+
 ## 🏗 Dependencies
 
 This project is built on the shoulders of giants:
