@@ -1,3 +1,4 @@
+import { QueryProvider } from "#components/QueryProvider";
 import HijriApp from "#components/HijriApp";
 import { Command } from "commander";
 import { render } from "ink";
@@ -7,5 +8,11 @@ export const hijriCommand = new Command("hijri")
   .description("Display the hijri date")
   .option("-1, --once", "Run once and exit", false)
   .action(() => {
-    render(React.createElement(HijriApp));
+    render(
+      React.createElement(
+        QueryProvider,
+        undefined,
+        React.createElement(HijriApp),
+      ),
+    );
   });

@@ -13,10 +13,11 @@ A modern, visually rich CLI for checking prayer times in Morocco, built with **R
 ## 🚀 Features
 
 - **Live Countdown**: "Remaining" time updates every second in real-time.
+- **Hijri Date**: Display the current Hijri date alongside Gregorian dates.
 - **Rich UI**: Beautiful terminal interface with colors and borders.
 - **Morocco Focused**: Supports 190+ cities across Morocco.
-- **Smart Caching**: Local storage caching to minimize API calls.
-- **Developer Friendly**: Built with TypeScript and Commander.js.
+- **Smart Caching**: In-memory caching with React Query to minimize API calls.
+- **Developer Friendly**: Built with TypeScript, Commander.js, and React.
 
 ## 📦 Installation
 
@@ -36,7 +37,10 @@ salat
 salat times Rabat
 
 # Run once and exit (no live timer)
-salat -1
+salat times Casablanca -1
+
+# Get the current hijri date
+salat hijri
 
 # Show a rich visual guide
 salat guide
@@ -50,14 +54,15 @@ salat cities
 ```text
 Usage: salat [options] [command]
 
-Daily Moroccan prayers time, right in your console
-
-Options:
-  -V, --version           output the version number
-  -h, --help              display help for command
+Daily Moroccan prayers tim  output the version number
+  -h, --help                display help for command
 
 Commands:
-  times [options] [city]  Get prayer times for a city
+  times [options] [city]    Get prayer times for a city
+  hijri                     Display the current hijri date
+  guide                     Show a rich visual guide to using salat-cli
+  cities                    Display the list of available city names
+  help [command]  ] [city]  Get prayer times for a city
   guide                   Show a rich visual guide to using salat-cli
   cities                  Display the list of available city names
   help [command]          display help for command
@@ -71,11 +76,11 @@ Commands:
 
 This project is built on the shoulders of giants:
 
-- [**Ink**](https://github.com/vadimdemedes/ink) - React for interactive command-line apps.
+- [**React Query**](https://tanstack.com/query/latest) - Data synchronization library for managing server state.
 - [**Commander.js**](https://github.com/tj/commander) - The complete solution for node.js command-line interfaces.
 - [**date-fns**](https://date-fns.org/) - Modern JavaScript date utility library.
 - [**node-fetch**](https://github.com/node-fetch/node-fetch) - A light-weight module that brings `window.fetch` to Node.js.
-- [**domino**](https://github.com/fent/domino) - Server-side DOM implementation for parsing API responses.
+- [**domino**](https://github.com/fent/domino) - Server-side DOM implementation for parsing API response
 - [**node-localstorage**](https://github.com/lmaccherone/node-localstorage) - LocalStorage implementation for Node.js.
 
 ## 🤝 Contributing

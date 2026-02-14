@@ -1,26 +1,9 @@
-import { getHijriDate } from "#services/utils/hijri";
+import { useHijriDate } from "#hooks/useHijriDate";
 import { Box, Text } from "ink";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const HijriApp: React.FC = () => {
-  const [hijriDate, setHijriDate] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const fetchHijri = async () => {
-      try {
-        const result = await getHijriDate();
-        setHijriDate(result.date);
-      } catch (err: any) {
-        setError(err.message || "Failed to fetch hijri date");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchHijri();
-  }, []);
+  const { hijriDate, error, loading } = useHijriDate();
 
   if (loading) {
     return <Text>Loading hijri date...</Text>;

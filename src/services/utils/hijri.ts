@@ -1,5 +1,6 @@
 import { HIJRI_API_URL } from "../constants.js";
 import { HijriDate } from "../types.js";
+import { cleanHijriDateText } from "./cleanData.js";
 
 export const getHijriDate = async (): Promise<HijriDate> => {
   try {
@@ -12,8 +13,7 @@ export const getHijriDate = async (): Promise<HijriDate> => {
       throw new Error("Empty response from hijri date API");
     }
 
-    // Clean up the text by removing any trailing % or whitespace
-    const cleanedDate = text.trim().replace(/%\s*$/, "");
+    const cleanedDate = cleanHijriDateText(text);
 
     return {
       date: cleanedDate,

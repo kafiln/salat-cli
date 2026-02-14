@@ -11,4 +11,3 @@ export const NOT_FOUND_ERROR = `
   `;
 
 export const DEFAULT_CITY = "Marrakech";
-export const LOCAL_STORAGE_PATH = "./storage";
