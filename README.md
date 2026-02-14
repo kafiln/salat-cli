@@ -75,13 +75,13 @@ Commands:
 ## 🏗 Dependencies
 
 This project is built on the shoulders of giants:
-
-- [**React Query**](https://tanstack.com/query/latest) - Data synchronization library for managing server state.
 - [**Commander.js**](https://github.com/tj/commander) - The complete solution for node.js command-line interfaces.
+
+- [**Ink**](https://github.com/vadimdemedes/ink) - React for interactive command-line apps.
+- [**React Query**](https://tanstack.com/query/latest) - Data synchronization library for managing server state.
 - [**date-fns**](https://date-fns.org/) - Modern JavaScript date utility library.
 - [**node-fetch**](https://github.com/node-fetch/node-fetch) - A light-weight module that brings `window.fetch` to Node.js.
 - [**domino**](https://github.com/fent/domino) - Server-side DOM implementation for parsing API response
-- [**node-localstorage**](https://github.com/lmaccherone/node-localstorage) - LocalStorage implementation for Node.js.
 
 ## 🤝 Contributing
 
