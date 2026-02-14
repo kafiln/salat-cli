@@ -62,9 +62,6 @@ Commands:
   hijri                     Display the current hijri date
   guide                     Show a rich visual guide to using salat-cli
   cities                    Display the list of available city names
-  help [command]  ] [city]  Get prayer times for a city
-  guide                   Show a rich visual guide to using salat-cli
-  cities                  Display the list of available city names
   help [command]          display help for command
 ```
 
@@ -76,11 +73,9 @@ Commands:
 
 This project is built on the shoulders of giants:
 - [**Commander.js**](https://github.com/tj/commander) - The complete solution for node.js command-line interfaces.
-
 - [**Ink**](https://github.com/vadimdemedes/ink) - React for interactive command-line apps.
 - [**React Query**](https://tanstack.com/query/latest) - Data synchronization library for managing server state.
 - [**date-fns**](https://date-fns.org/) - Modern JavaScript date utility library.
-- [**node-fetch**](https://github.com/node-fetch/node-fetch) - A light-weight module that brings `window.fetch` to Node.js.
 - [**domino**](https://github.com/fent/domino) - Server-side DOM implementation for parsing API response
 
 ## 🤝 Contributing
