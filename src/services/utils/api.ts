@@ -1,6 +1,5 @@
 import { PRIERE_API_URL } from "#services/constants";
 import { PrayerTimes } from "#services/types";
-// import fetch from "node-fetch";
 
 export const getData = async (cityId: number, date: Date = new Date()) => {
   const day = date.getDate();

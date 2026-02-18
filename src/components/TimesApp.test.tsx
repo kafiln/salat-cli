@@ -1,5 +1,6 @@
 import { useHijriDate } from "#hooks/useHijriDate";
 import { usePrayerTimes } from "#hooks/usePrayerTimes";
+import { useApp } from "ink";
 import { render } from "ink-testing-library";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import TimesApp from "./TimesApp.js";
@@ -151,5 +152,31 @@ describe("TimesApp", () => {
     expect(lastFrame()).toContain("Time to Imsak");
     // From 21:00 to 04:50 is 7 hours and 50 minutes
     expect(lastFrame()).toContain("07:50:00");
+  });
+
+  it("should call exit() when once is true and loading is finished", () => {
+    const mockExit = vi.fn();
+    vi.mocked(useApp).mockReturnValue({ exit: mockExit });
+
+    const mockPrayerTimes = {
+      Fajr: "05:00",
+      Chorouq: "06:30",
+      Dhuhr: "12:30",
+      Asr: "15:45",
+      Maghrib: "18:20",
+      Ishae: "19:50",
+    };
+
+    vi.mocked(usePrayerTimes).mockReturnValue({
+      prayerTimes: mockPrayerTimes,
+      tomorrowTimes: null,
+      error: null,
+      loading: false,
+      resolvedCityName: "Marrakech",
+    });
+
+    render(<TimesApp once={true} />);
+
+    expect(mockExit).toHaveBeenCalled();
   });
 });

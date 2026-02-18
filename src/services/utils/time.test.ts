@@ -143,5 +143,10 @@ describe('time utils', () => {
                 timeLeft: '06:50:00'
             });
         });
+        it('should return null', () => {
+            const now = parseISO('2026-02-07T22:00:00');
+            const data = getRamadanData(prayerTimes, null, now);
+            expect(data).toBeNull()
+        });
     });
 });

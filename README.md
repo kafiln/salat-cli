@@ -1,4 +1,4 @@
-# 🧭 salat-cli
+# 🧭 salat
 
 > Daily Moroccan prayers time, right in your console, at the tip of your fingers. ✨
 
@@ -15,7 +15,7 @@ A modern, visually rich CLI for checking prayer times in Morocco, built with **R
 - **Live Countdown**: "Remaining" time updates every second in real-time.
 - **Hijri Date**: Display the current Hijri date alongside Gregorian dates.
 - **Rich UI**: Beautiful terminal interface with colors and borders.
-- **Morocco Focused**: Supports 190+ cities across Morocco.
+- **Morocco Focused**: Supports 320+ cities across Morocco.
 - **Smart Caching**: In-memory caching with React Query to minimize API calls.
 - **Developer Friendly**: Built with TypeScript, Commander.js, and React.
 
@@ -23,6 +23,11 @@ A modern, visually rich CLI for checking prayer times in Morocco, built with **R
 
 ```bash
 npm install -g salat
+```
+or using npx 
+
+```bash
+npx salat
 ```
 
 ## 🛠 Usage
@@ -76,7 +81,6 @@ This project is built on the shoulders of giants:
 - [**Ink**](https://github.com/vadimdemedes/ink) - React for interactive command-line apps.
 - [**React Query**](https://tanstack.com/query/latest) - Data synchronization library for managing server state.
 - [**date-fns**](https://date-fns.org/) - Modern JavaScript date utility library.
-- [**domino**](https://github.com/fent/domino) - Server-side DOM implementation for parsing API response
 
 ## 🤝 Contributing
 
@@ -89,6 +93,12 @@ Contributions are welcome! Whether it's a bug fix, a new feature, or better docu
 5.  **Build**: `npm run build`
 6.  **Test**: `npm test`
 7.  **Submit** a Pull Request.
+
+## Todo
+[] i18n (right now english is default)
+[] Random Du'a generation
+[] Random Aya generation
+
 
 ## ⭐ Show your support
 

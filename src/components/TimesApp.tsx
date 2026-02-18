@@ -29,19 +29,18 @@ const App: React.FC<AppProps> = ({ cityNameArg, once, onReset }) => {
   });
 
   useEffect(() => {
+    if (once) return;
+
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [once]);
 
   useEffect(() => {
     if (once && !loading && (prayerTimes || error)) {
-      const timer = setTimeout(() => {
-        exit();
-      }, 100);
-      return () => clearTimeout(timer);
+      exit();
     }
   }, [once, loading, prayerTimes, error, exit]);
 
