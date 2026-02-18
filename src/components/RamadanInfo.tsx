@@ -10,7 +10,7 @@ interface RamadanInfoProps {
 export const RamadanInfo: React.FC<RamadanInfoProps> = ({ data }) => {
     if (!data) return null;
 
-    if (data.type === "fasting") {
+    if (data.type == "fasting") {
         return (
             <Box flexDirection="column" alignItems="center">
                 <Text bold color="yellow">⌛ Iftar Progress</Text>
