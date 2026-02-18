@@ -24,7 +24,7 @@
     "react": "^19.2.4"
   },
   "scripts": {
-    "dev": "node --no-warnings --loader ts-node/esm src/app.ts",
+    "dev": "tsc && node dist/app.js",
     "build": "tsc && chmod +x dist/app.js",
     "start": "node dist/app.js",
     "prestart": "npm run build",

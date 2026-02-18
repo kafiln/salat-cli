@@ -1,3 +1,4 @@
+import { useHijriDate } from "#hooks/useHijriDate";
 import { usePrayerTimes } from "#hooks/usePrayerTimes";
 import { getNextPrayer, tConv24 } from "#services/utils/time";
 import { format } from "date-fns";
@@ -14,6 +15,7 @@ const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
   const { prayerTimes, error, loading, resolvedCityName } = usePrayerTimes({
     cityNameArg,
   });
+  const { hijriDate, loading: hijriLoading } = useHijriDate()
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
 
   useEffect(() => {
@@ -33,7 +35,7 @@ const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
     }
   }, [once, loading, prayerTimes, error, exit]);
 
-  if (loading) {
+  if (loading || hijriLoading) {
     return <Text>Loading prayer times...</Text>;
   }
 
@@ -53,32 +55,10 @@ const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
       <Box marginBottom={1}>
         <Text>📅 {format(currentTime, "PPPP")}</Text>
       </Box>
-      {prayerTimes && (
-        <Box
-          borderStyle="round"
-          borderColor="cyan"
-          paddingX={1}
-          marginBottom={1}
-          flexDirection="column"
-        >
-          <Box>
-            <Text bold color="cyan">
-              Next Prayer:{" "}
-            </Text>
-            <Text bold>{getNextPrayer(prayerTimes, currentTime).prayer}</Text>
-          </Box>
-          <Box>
-            <Text>Time: </Text>
-            <Text>{tConv24(getNextPrayer(prayerTimes, currentTime).time)}</Text>
-          </Box>
-          <Box>
-            <Text color="yellow">Remaining: </Text>
-            <Text color="yellow">
-              {getNextPrayer(prayerTimes, currentTime).timeLeft}
-            </Text>
-          </Box>
-        </Box>
-      )}
+      {hijriDate && <Box marginBottom={1}>
+        <Text>📅 {hijriDate}</Text>
+      </Box>}
+
       <Box flexDirection="column">
         {Object.entries(prayerTimes).map(([prayer, time]) => {
           const isNext =
@@ -96,6 +76,13 @@ const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
               <Text color={isNext ? "yellow" : "green"} bold={isNext}>
                 {tConv24(time)}
               </Text>
+              {isNext && <Box>
+                <Box marginLeft={2}>
+                  <Text color="yellow">
+                    {getNextPrayer(prayerTimes, currentTime).timeLeft}
+                  </Text>
+                </Box>
+              </Box>}
             </Box>
           );
         })}
