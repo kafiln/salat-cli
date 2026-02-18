@@ -2,9 +2,9 @@ import { PRIERE_API_URL } from "#services/constants";
 import { PrayerTimes } from "#services/types";
 // import fetch from "node-fetch";
 
-export const getData = async (cityId: number) => {
-  const day = new Date().getDate();
-  const month = new Date().getMonth() + 1;
+export const getData = async (cityId: number, date: Date = new Date()) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
   const url = PRIERE_API_URL(cityId, day, month);
   const response = await fetch(url);
   const data = (await response.json()) as PrayerTimes[];

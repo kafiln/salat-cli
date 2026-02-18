@@ -10,23 +10,29 @@ interface UsePrayerTimesProps {
   cityNameArg?: string;
 }
 
+import { addDays } from "date-fns";
+
 export const usePrayerTimes = ({ cityNameArg }: UsePrayerTimesProps) => {
   const resolvedCityName = getCityName(cityNameArg, cities);
 
   const query = useQuery({
     queryKey: ["prayerTimes", resolvedCityName],
     queryFn: async () => {
-      // Fetch fresh data
       const cityId = getCityId(resolvedCityName, cities);
-      const data = await getData(cityId);
-      return data;
+      const now = new Date();
+      const [today, tomorrow] = await Promise.all([
+        getData(cityId, now),
+        getData(cityId, addDays(now, 1)),
+      ]);
+      return { today, tomorrow };
     },
     staleTime: 1000 * 60 * 60 * 24, // 24 hours
     gcTime: 1000 * 60 * 60 * 24, // garbage collection after 24 hours
   });
 
   return {
-    prayerTimes: query.data ?? null,
+    prayerTimes: query.data?.today ?? null,
+    tomorrowTimes: query.data?.tomorrow ?? null,
     error: query.error?.message ?? null,
     loading: query.isPending,
     resolvedCityName,

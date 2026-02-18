@@ -1,8 +1,9 @@
+import { ProgressBar } from "#components/ProgressBar";
+import { RamadanInfo } from "#components/RamadanInfo";
 import { useHijriDate } from "#hooks/useHijriDate";
 import { usePrayerTimes } from "#hooks/usePrayerTimes";
-import { PrayerName } from "#services/types";
-import { getImsakTime, getNextPrayer, tConv24 } from "#services/utils/time";
-import { differenceInSeconds, format, parse, subDays } from "date-fns";
+import { getImsakTime, getNextPrayer, getPrayerProgress, getRamadanData, tConv24 } from "#services/utils/time";
+import { format } from "date-fns";
 import { Box, Text, useApp, useInput } from "ink";
 import React, { useEffect, useState } from "react";
 
@@ -12,24 +13,9 @@ interface AppProps {
   onReset?: () => void;
 }
 
-const ProgressBar: React.FC<{ progress: number; width: number }> = ({
-  progress,
-  width,
-}) => {
-  const filledWidth = Math.max(0, Math.min(width, Math.round(progress * width)));
-  const emptyWidth = width - filledWidth;
-
-  return (
-    <Box>
-      <Text color="green">{"█".repeat(filledWidth)}</Text>
-      <Text color="gray">{"░".repeat(emptyWidth)}</Text>
-    </Box>
-  );
-};
-
 const App: React.FC<AppProps> = ({ cityNameArg, once, onReset }) => {
   const { exit } = useApp();
-  const { prayerTimes, error, loading, resolvedCityName } = usePrayerTimes({
+  const { prayerTimes, tomorrowTimes, error, loading, resolvedCityName } = usePrayerTimes({
     cityNameArg,
   });
   const { hijriDate } = useHijriDate();
@@ -84,25 +70,8 @@ const App: React.FC<AppProps> = ({ cityNameArg, once, onReset }) => {
   }
 
   const nextPrayerData = getNextPrayer(prayerTimes, currentTime);
-
-  // Calculate progress
-  const prayerOrder: PrayerName[] = ["Fajr", "Chorouq", "Dhuhr", "Asr", "Maghrib", "Ishae"];
-  const nextIndex = prayerOrder.indexOf(nextPrayerData.prayer as PrayerName);
-  const prevIndex = (nextIndex - 1 + prayerOrder.length) % prayerOrder.length;
-  const prevPrayerName = prayerOrder[prevIndex];
-
-  let prevDate = parse(prayerTimes[prevPrayerName], "HH:mm", currentTime);
-  let nextDate = parse(nextPrayerData.time, "HH:mm", currentTime);
-
-  if (nextPrayerData.prayer === "Fajr" && currentTime.getHours() >= 12) {
-    nextDate = parse(nextPrayerData.time, "HH:mm", new Date(currentTime.getTime() + 24 * 60 * 60 * 1000));
-  } else if (nextPrayerData.prayer === "Fajr" && currentTime.getHours() < 12) {
-    prevDate = subDays(parse(prayerTimes.Ishae, "HH:mm", currentTime), 1);
-  }
-
-  const totalSeconds = differenceInSeconds(nextDate, prevDate);
-  const elapsedSeconds = differenceInSeconds(currentTime, prevDate);
-  const progress = Math.max(0, Math.min(1, elapsedSeconds / totalSeconds));
+  const progress = getPrayerProgress(prayerTimes, currentTime, nextPrayerData.prayer);
+  const ramadanData = getRamadanData(prayerTimes, tomorrowTimes, currentTime);
 
   return (
     <Box
@@ -132,8 +101,17 @@ const App: React.FC<AppProps> = ({ cityNameArg, once, onReset }) => {
         )}
       </Box>
 
-      {/* Progress Section */}
-
+      {/* Ramadan Info Section */}
+      <Box
+        flexDirection="column"
+        alignItems="center"
+        marginY={1}
+        padding={1}
+        borderStyle="single"
+        borderColor="yellow"
+      >
+        <RamadanInfo data={ramadanData} />
+      </Box>
 
       {/* Prayer Times List */}
       <Box flexDirection="column" marginY={1}>
