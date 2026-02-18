@@ -1,8 +1,7 @@
 import { HIJRI_API_URL } from "../constants.js";
-import { HijriDate } from "../types.js";
-import { cleanHijriDateText } from "./cleanData.js";
+import { cleanHijriDateText } from "./parseHijri.js";
 
-export const getHijriDate = async (): Promise<HijriDate> => {
+export const getHijriDate = async (): Promise<string> => {
   try {
     const response = await fetch(HIJRI_API_URL);
     const text = await response.text();
@@ -15,9 +14,8 @@ export const getHijriDate = async (): Promise<HijriDate> => {
 
     const cleanedDate = cleanHijriDateText(text);
 
-    return {
-      date: cleanedDate,
-    };
+
+    return cleanedDate;
   } catch (error: any) {
     throw new Error(`Failed to fetch hijri date: ${error.message}`);
   }

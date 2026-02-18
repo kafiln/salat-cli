@@ -19,7 +19,7 @@ const HijriApp: React.FC = () => {
         <Text color="blue">🕌 Hijri Date</Text>
       </Box>
       <Box padding={1}>
-        <Text>{`\u061C${hijriDate}`}</Text>
+        <Text>{`${hijriDate}`}</Text>
       </Box>
     </Box>
   );

@@ -21,7 +21,7 @@ describe("hijri service", () => {
 
     const result = await getHijriDate();
 
-    expect(result.date).toBe(mockResponse);
+    expect(result).toBe("18 Sha'ban 1447");
     expect(global.fetch).toHaveBeenCalledWith(
       "https://apisearch.hadithm6.ma/api/hijridate",
     );
@@ -56,6 +56,6 @@ describe("hijri service", () => {
 
     const result = await getHijriDate();
 
-    expect(result.date).toBe("السبت 18 شعبان 1447هـ | الموافق 07 فبراير 2026م");
+    expect(result).toBe("18 Sha'ban 1447");
   });
 });

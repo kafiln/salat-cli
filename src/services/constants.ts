@@ -1,7 +1,8 @@
-export const API_URL = "https://www.habous.gov.ma/prieres/horaire-api.php";
-export const HIJRI_API_URL = "https://apisearch.hadithm6.ma/api/hijridate";
+export const API_URL = "https://apisearch.hadithm6.ma/api";
+export const HIJRI_API_URL = API_URL + "/hijridate";
 
-export const BANNER = ``;
+export const PRIERE_API_URL = (cityId: number, day: number, month: number) =>
+  API_URL + `/prieres/ville/${cityId}/${month}/${day}`;
 
 export const NOT_FOUND_ERROR = `
   Your city was not found in the list

@@ -1,6 +1,7 @@
 export interface City {
   id: number;
-  name: string;
+  arabicName?: string;
+  frenchName: string;
 }
 
 export type PrayerName =

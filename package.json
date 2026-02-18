@@ -1,6 +1,6 @@
 {
   "name": "salat",
-  "version": "4.10.0",
+  "version": "5.0.0",
   "imports": {
     "#*": "./dist/*.js"
   },
@@ -18,9 +18,9 @@
     "@tanstack/react-query": "^5.90.21",
     "commander": "^14.0.3",
     "date-fns": "^4.1.0",
-    "domino": "^2.1.6",
     "ink": "^6.6.0",
-    "node-fetch": "^3.3.1",
+    "ink-select-input": "^6.2.0",
+    "ink-text-input": "^6.0.0",
     "react": "^19.2.4"
   },
   "scripts": {

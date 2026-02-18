@@ -1,10 +1,15 @@
+import { useHijriDate } from "#hooks/useHijriDate";
 import { usePrayerTimes } from "#hooks/usePrayerTimes";
 import { render } from "ink-testing-library";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import TimesApp from "./TimesApp.js";
 
 vi.mock("#hooks/usePrayerTimes", () => ({
   usePrayerTimes: vi.fn(),
+}));
+
+vi.mock("#hooks/useHijriDate", () => ({
+  useHijriDate: vi.fn(),
 }));
 
 vi.mock("ink", async () => {
@@ -18,16 +23,24 @@ vi.mock("ink", async () => {
 });
 
 describe("TimesApp", () => {
+  beforeEach(() => {
+    vi.mocked(useHijriDate).mockReturnValue({
+      hijriDate: "18 Sha'ban 1447",
+      error: null,
+      loading: false,
+    });
+  });
+
   it("should render loading state", () => {
     vi.mocked(usePrayerTimes).mockReturnValue({
       prayerTimes: null,
       error: null,
       loading: true,
-      resolvedCityName: "",
+      resolvedCityName: "Marrakech",
     });
 
     const { lastFrame } = render(<TimesApp />);
-    expect(lastFrame()).toContain("Loading prayer times...");
+    expect(lastFrame()).toContain("Loading prayer times for Marrakech");
   });
 
   it("should render error state", () => {
@@ -73,12 +86,8 @@ describe("TimesApp", () => {
 
     const { lastFrame } = render(<TimesApp />);
 
-    expect(lastFrame()).toContain("Marrakech, Morocco");
+    expect(lastFrame()).toContain("Marrakech");
     expect(lastFrame()).toContain("Fajr");
     expect(lastFrame()).toContain("05:00 AM");
-    // Check for prayer times rendering
-    expect(lastFrame()).toContain("Next Prayer");
-    expect(lastFrame()).toContain("Dhuhr");
-    expect(lastFrame()).toContain("12:30 PM");
   });
 });

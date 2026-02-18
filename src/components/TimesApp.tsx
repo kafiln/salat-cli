@@ -1,22 +1,46 @@
 import { useHijriDate } from "#hooks/useHijriDate";
 import { usePrayerTimes } from "#hooks/usePrayerTimes";
-import { getNextPrayer, tConv24 } from "#services/utils/time";
-import { format } from "date-fns";
-import { Box, Text, useApp } from "ink";
+import { PrayerName } from "#services/types";
+import { getImsakTime, getNextPrayer, tConv24 } from "#services/utils/time";
+import { differenceInSeconds, format, parse, subDays } from "date-fns";
+import { Box, Text, useApp, useInput } from "ink";
 import React, { useEffect, useState } from "react";
 
 interface AppProps {
   cityNameArg?: string;
   once?: boolean;
+  onReset?: () => void;
 }
 
-const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
+const ProgressBar: React.FC<{ progress: number; width: number }> = ({
+  progress,
+  width,
+}) => {
+  const filledWidth = Math.max(0, Math.min(width, Math.round(progress * width)));
+  const emptyWidth = width - filledWidth;
+
+  return (
+    <Box>
+      <Text color="green">{"█".repeat(filledWidth)}</Text>
+      <Text color="gray">{"░".repeat(emptyWidth)}</Text>
+    </Box>
+  );
+};
+
+const App: React.FC<AppProps> = ({ cityNameArg, once, onReset }) => {
   const { exit } = useApp();
   const { prayerTimes, error, loading, resolvedCityName } = usePrayerTimes({
     cityNameArg,
   });
-  const { hijriDate, loading: hijriLoading } = useHijriDate()
+  const { hijriDate } = useHijriDate();
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
+
+  useInput((input) => {
+    const key = input.toLowerCase();
+    if (key === "c" && onReset) {
+      onReset();
+    }
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,58 +59,152 @@ const App: React.FC<AppProps> = ({ cityNameArg, once }) => {
     }
   }, [once, loading, prayerTimes, error, exit]);
 
-  if (loading || hijriLoading) {
-    return <Text>Loading prayer times...</Text>;
+  if (loading) {
+    return (
+      <Box padding={1}>
+        <Text color="yellow">Loading prayer times for {resolvedCityName}...</Text>
+      </Box>
+    );
   }
 
   if (error) {
-    return <Text color="red">Error: {error}</Text>;
+    return (
+      <Box padding={1}>
+        <Text color="red" bold>Error: {error}</Text>
+      </Box>
+    );
   }
 
   if (!prayerTimes) {
-    return <Text color="red">Could not fetch prayer times.</Text>;
+    return (
+      <Box padding={1}>
+        <Text color="red" bold>Could not fetch prayer times.</Text>
+      </Box>
+    );
   }
 
-  return (
-    <Box flexDirection="column" padding={1}>
-      <Box marginBottom={1}>
-        <Text>🧭 {resolvedCityName}, Morocco</Text>
-      </Box>
-      <Box marginBottom={1}>
-        <Text>📅 {format(currentTime, "PPPP")}</Text>
-      </Box>
-      {hijriDate && <Box marginBottom={1}>
-        <Text>📅 {hijriDate}</Text>
-      </Box>}
+  const nextPrayerData = getNextPrayer(prayerTimes, currentTime);
 
-      <Box flexDirection="column">
-        {Object.entries(prayerTimes).map(([prayer, time]) => {
-          const isNext =
-            prayer === getNextPrayer(prayerTimes!, currentTime).prayer;
+  // Calculate progress
+  const prayerOrder: PrayerName[] = ["Fajr", "Chorouq", "Dhuhr", "Asr", "Maghrib", "Ishae"];
+  const nextIndex = prayerOrder.indexOf(nextPrayerData.prayer as PrayerName);
+  const prevIndex = (nextIndex - 1 + prayerOrder.length) % prayerOrder.length;
+  const prevPrayerName = prayerOrder[prevIndex];
+
+  let prevDate = parse(prayerTimes[prevPrayerName], "HH:mm", currentTime);
+  let nextDate = parse(nextPrayerData.time, "HH:mm", currentTime);
+
+  if (nextPrayerData.prayer === "Fajr" && currentTime.getHours() >= 12) {
+    nextDate = parse(nextPrayerData.time, "HH:mm", new Date(currentTime.getTime() + 24 * 60 * 60 * 1000));
+  } else if (nextPrayerData.prayer === "Fajr" && currentTime.getHours() < 12) {
+    prevDate = subDays(parse(prayerTimes.Ishae, "HH:mm", currentTime), 1);
+  }
+
+  const totalSeconds = differenceInSeconds(nextDate, prevDate);
+  const elapsedSeconds = differenceInSeconds(currentTime, prevDate);
+  const progress = Math.max(0, Math.min(1, elapsedSeconds / totalSeconds));
+
+  return (
+    <Box
+      flexDirection="column"
+      paddingX={2}
+      paddingY={1}
+      borderStyle="round"
+      borderColor="green"
+      width={60}
+    >
+      {/* Header */}
+      <Box flexDirection="column" alignItems="center" gap={1}>
+        <Box borderStyle="single" borderColor="green">
+          <Text bold color="green">
+            🇲🇦 {resolvedCityName}, Morocco 🇲🇦
+          </Text>
+        </Box>
+        <Box marginTop={1}>
+          <Text color="white" bold>
+            📅  {format(currentTime, "EEEE, MMMM do yyyy")}
+          </Text>
+        </Box>
+        {hijriDate && (
+          <Text color="gray" dimColor>
+            🕌 {hijriDate}
+          </Text>
+        )}
+      </Box>
+
+      {/* Progress Section */}
+
+
+      {/* Prayer Times List */}
+      <Box flexDirection="column" marginY={1}>
+        {Object.entries({
+          "Imsak *": getImsakTime(prayerTimes.Fajr),
+          ...prayerTimes,
+        }).map(([prayer, time]) => {
+          const isNext = prayer === nextPrayerData.prayer;
+          const isImsak = prayer === "Imsak *";
+
           return (
-            <Box key={prayer}>
-              <Box width={10}>
-                <Text color={isNext ? "cyan" : "white"} bold={isNext}>
-                  {prayer}
+            <Box
+              key={prayer}
+              justifyContent="space-between"
+              paddingX={2}
+              backgroundColor={isNext ? "green" : undefined}
+            >
+              <Box>
+                <Text color={isNext ? "white" : (isImsak ? "gray" : "white")} bold={isNext}>
+                  {isNext ? "> " : "  "}
+                  {prayer.padEnd(12)}
                 </Text>
               </Box>
-              <Box marginRight={2}>
-                <Text color={isNext ? "cyan" : "gray"}>--&gt;</Text>
+
+              <Box>
+                <Text color={isNext ? "white" : (isImsak ? "gray" : "white")} bold={isNext}>
+                  {tConv24(time)}
+                </Text>
               </Box>
-              <Text color={isNext ? "yellow" : "green"} bold={isNext}>
-                {tConv24(time)}
-              </Text>
-              {isNext && <Box>
-                <Box marginLeft={2}>
-                  <Text color="yellow">
-                    {getNextPrayer(prayerTimes, currentTime).timeLeft}
-                  </Text>
-                </Box>
-              </Box>}
             </Box>
           );
         })}
       </Box>
+
+      {/* Disclaimer */}
+      <Box paddingX={2} marginTop={1}>
+        <Text dimColor color="gray" italic>
+          * Imsak is 10 min before Fajr for safety
+        </Text>
+      </Box>
+
+      {/* Footer / Status */}
+      <Box
+        marginTop={1}
+        paddingX={2}
+        paddingY={1}
+        flexDirection="column"
+        alignItems="center"
+        borderStyle="single"
+        borderColor="yellow"
+      >
+        <Text>
+          Next: <Text color="green" bold>{nextPrayerData.prayer}</Text> in <Text color="yellow" bold>{nextPrayerData.timeLeft}</Text>
+        </Text>
+        <Box flexDirection="column" alignItems="center" marginY={1}>
+          <ProgressBar progress={progress} width={50} />
+          <Box justifyContent="space-between" width={50} marginTop={0}>
+            <Text color="gray" dimColor>0%</Text>
+            <Text color="green" bold>{Math.round(progress * 100)}%</Text>
+            <Text color="gray" dimColor>100%</Text>
+          </Box>
+        </Box>
+      </Box>
+
+      {!once && (
+        <Box marginTop={1} justifyContent="center">
+          <Text dimColor color="gray">
+            [C] Change City  •  [Ctrl+C] Exit
+          </Text>
+        </Box>
+      )}
     </Box>
   );
 };

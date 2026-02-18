@@ -1,7 +1,10 @@
 import { DEFAULT_CITY, NOT_FOUND_ERROR } from "#services/constants";
 import { City } from "#services/types";
 
-export const getCityName = (arg: string | undefined, cities: City[]): string => {
+export const getCityName = (
+  arg: string | undefined,
+  cities: City[],
+): string => {
   if (arg == null) return DEFAULT_CITY;
   const index = getCityIndex(arg, cities);
   if (index === -1) {
@@ -20,4 +23,4 @@ export const getCityId = (arg: string, cities: City[]): number => {
 };
 
 export const getCityIndex = (city: string, cities: City[]): number =>
-  cities.map((e) => e.name.toLowerCase()).indexOf(city.toLowerCase());
+  cities.map((e) => e.frenchName.toLowerCase()).indexOf(city.toLowerCase());

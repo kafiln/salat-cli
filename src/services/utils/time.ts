@@ -1,9 +1,15 @@
 import { PrayerName, PrayerTimes } from "#services/types";
-import { addDays, format, intervalToDuration, parse } from "date-fns";
+import { addDays, format, intervalToDuration, parse, subMinutes } from "date-fns";
 
 export function tConv24(time24: string): string {
   const date = parse(time24, "HH:mm", new Date());
   return format(date, "hh:mm a");
+}
+
+export function getImsakTime(fajr: string): string {
+  const date = parse(fajr, "HH:mm", new Date());
+  const imsakDate = subMinutes(date, 10);
+  return format(imsakDate, "HH:mm");
 }
 
 export function getNextPrayer(

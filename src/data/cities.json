@@ -1,766 +1,1892 @@
 [
-    {
-        "id": 1,
-        "name": "Rabat"
-    },
-    {
-        "id": 2,
-        "name": "Khémissat"
-    },
-    {
-        "id": 3,
-        "name": "Tiflet"
-    },
-    {
-        "id": 4,
-        "name": "Remani"
-    },
-    {
-        "id": 5,
-        "name": "Oulmes"
-    },
-    {
-        "id": 6,
-        "name": "Bouznika"
-    },
-    {
-        "id": 7,
-        "name": "Kénitra"
-    },
-    {
-        "id": 8,
-        "name": "Sidi Kacém"
-    },
-    {
-        "id": 9,
-        "name": "Sidi Yahya Gharb"
-    },
-    {
-        "id": 10,
-        "name": "Sidi Slimane"
-    },
-    {
-        "id": 11,
-        "name": "Souq Arbiâ Gharb"
-    },
-    {
-        "id": 12,
-        "name": "Arbaoua"
-    },
-    {
-        "id": 13,
-        "name": "Moulay Bousselham"
-    },
-    {
-        "id": 14,
-        "name": "Tanger"
-    },
-    {
-        "id": 15,
-        "name": "Tetouan"
-    },
-    {
-        "id": 16,
-        "name": "Araich"
-    },
-    {
-        "id": 17,
-        "name": "Assila"
-    },
-    {
-        "id": 18,
-        "name": "Chefchaouan"
-    },
-    {
-        "id": 19,
-        "name": "Martil"
-    },
-    {
-        "id": 20,
-        "name": "Mediek"
-    },
-    {
-        "id": 21,
-        "name": "Ksar El Kebir"
-    },
-    {
-        "id": 22,
-        "name": "Ksar El Sghir"
-    },
-    {
-        "id": 23,
-        "name": "Hoceima"
-    },
-    {
-        "id": 24,
-        "name": "Sebta"
-    },
-    {
-        "id": 25,
-        "name": "Fnideq"
-    },
-    {
-        "id": 26,
-        "name": "El Jabha"
-    },
-    {
-        "id": 27,
-        "name": "Oued Law"
-    },
-    {
-        "id": 28,
-        "name": "Bab Bared"
-    },
-    {
-        "id": 29,
-        "name": "Ouazane"
-    },
-    {
-        "id": 30,
-        "name": "Bouskoura"
-    },
-    {
-        "id": 31,
-        "name": "Oujda"
-    },
-    {
-        "id": 32,
-        "name": "Berkane"
-    },
-    {
-        "id": 33,
-        "name": "Figuig"
-    },
-    {
-        "id": 34,
-        "name": "Bouarfa"
-    },
-    {
-        "id": 35,
-        "name": "Guercif"
-    },
-    {
-        "id": 36,
-        "name": "Jerada"
-    },
-    {
-        "id": 37,
-        "name": "Aïn Chaïr"
-    },
-    {
-        "id": 38,
-        "name": "Taourirt"
-    },
-    {
-        "id": 39,
-        "name": "Nador"
-    },
-    {
-        "id": 40,
-        "name": "Melilla"
-    },
-    {
-        "id": 41,
-        "name": "Debdou"
-    },
-    {
-        "id": 42,
-        "name": "Selouane"
-    },
-    {
-        "id": 43,
-        "name": "Beni Ansar"
-    },
-    {
-        "id": 44,
-        "name": "Ferkhana"
-    },
-    {
-        "id": 45,
-        "name": "Talsint"
-    },
-    {
-        "id": 46,
-        "name": "Tendrara"
-    },
-    {
-        "id": 47,
-        "name": "Laayoune Sidi Mellouk"
-    },
-    {
-        "id": 48,
-        "name": "Beni Adrar"
-    },
-    {
-        "id": 49,
-        "name": "Saïdia"
-    },
-    {
-        "id": 50,
-        "name": "Ras Alma"
-    },
-    {
-        "id": 51,
-        "name": "Tafougalt"
-    },
-    {
-        "id": 52,
-        "name": "Fezouane"
-    },
-    {
-        "id": 53,
-        "name": "Ahfir"
-    },
-    {
-        "id": 54,
-        "name": "Zayou"
-    },
-    {
-        "id": 55,
-        "name": "Deryouche"
-    },
-    {
-        "id": 56,
-        "name": "Beni Tejit"
-    },
-    {
-        "id": 57,
-        "name": "Bouanan"
-    },
-    {
-        "id": 58,
-        "name": "Casablanca"
-    },
-    {
-        "id": 59,
-        "name": "Mohammedia"
-    },
-    {
-        "id": 60,
-        "name": "Ben Slimane"
-    },
-    {
-        "id": 61,
-        "name": "Settat"
-    },
-    {
-        "id": 62,
-        "name": "El Gara"
-    },
-    {
-        "id": 63,
-        "name": "El Brouj"
-    },
-    {
-        "id": 64,
-        "name": "Ben Ahmed"
-    },
-    {
-        "id": 65,
-        "name": "Berrchid"
-    },
-    {
-        "id": 66,
-        "name": "El Jadida"
-    },
-    {
-        "id": 67,
-        "name": "Azemmour"
-    },
-    {
-        "id": 68,
-        "name": "Sidi Benour"
-    },
-    {
-        "id": 69,
-        "name": "Khemis Zemamra"
-    },
-    {
-        "id": 70,
-        "name": "Khenifra"
-    },
-    {
-        "id": 71,
-        "name": "Moulay Bouaza"
-    },
-    {
-        "id": 72,
-        "name": "Zaouiat Ahansal"
-    },
-    {
-        "id": 73,
-        "name": "Beni Mellal"
-    },
-    {
-        "id": 74,
-        "name": "Azilal"
-    },
-    {
-        "id": 75,
-        "name": "Fquih Ben Salah"
-    },
-    {
-        "id": 76,
-        "name": "Demnat"
-    },
-    {
-        "id": 77,
-        "name": "El Kasba"
-    },
-    {
-        "id": 78,
-        "name": "Kasbah Tadla"
-    },
-    {
-        "id": 79,
-        "name": "Khouribga"
-    },
-    {
-        "id": 80,
-        "name": "Oued Zam"
-    },
-    {
-        "id": 81,
-        "name": "Fes"
-    },
-    {
-        "id": 82,
-        "name": "Sefrou"
-    },
-    {
-        "id": 83,
-        "name": "Moulay Yacoub"
-    },
-    {
-        "id": 84,
-        "name": "Boulmane"
-    },
-    {
-        "id": 85,
-        "name": "Misour"
-    },
-    {
-        "id": 86,
-        "name": "Ribate El Kheir"
-    },
-    {
-        "id": 87,
-        "name": "El Menzel"
-    },
-    {
-        "id": 88,
-        "name": "Imouzzer Kandar"
-    },
-    {
-        "id": 89,
-        "name": "Taza"
-    },
-    {
-        "id": 90,
-        "name": "Taounat"
-    },
-    {
-        "id": 91,
-        "name": "Aknoul"
-    },
-    {
-        "id": 92,
-        "name": "Tizi Ousli"
-    },
-    {
-        "id": 93,
-        "name": "Bourd"
-    },
-    {
-        "id": 94,
-        "name": "Tahla"
-    },
-    {
-        "id": 95,
-        "name": "Tisa"
-    },
-    {
-        "id": 96,
-        "name": "Kariat Ba Mohammed"
-    },
-    {
-        "id": 97,
-        "name": "Ketama"
-    },
-    {
-        "id": 98,
-        "name": "Oued Amlil"
-    },
-    {
-        "id": 99,
-        "name": "Meknes"
-    },
-    {
-        "id": 100,
-        "name": "Yefrin"
-    },
-    {
-        "id": 101,
-        "name": "El Hajeb"
-    },
-    {
-        "id": 102,
-        "name": "Zerhoune"
-    },
-    {
-        "id": 103,
-        "name": "Azrou"
-    },
-    {
-        "id": 104,
-        "name": "Marrakech"
-    },
-    {
-        "id": 105,
-        "name": "Kalaat Sraghna"
-    },
-    {
-        "id": 106,
-        "name": "Essaouira"
-    },
-    {
-        "id": 107,
-        "name": "Chichaoua"
-    },
-    {
-        "id": 108,
-        "name": "Bengrir"
-    },
-    {
-        "id": 109,
-        "name": "Rhamna"
-    },
-    {
-        "id": 110,
-        "name": "Temnar"
-    },
-    {
-        "id": 111,
-        "name": "Safi"
-    },
-    {
-        "id": 112,
-        "name": "Oualidia"
-    },
-    {
-        "id": 113,
-        "name": "Yousofia"
-    },
-    {
-        "id": 114,
-        "name": "Tasltanet"
-    },
-    {
-        "id": 115,
-        "name": "Tamslouhet"
-    },
-    {
-        "id": 116,
-        "name": "Katara"
-    },
-    {
-        "id": 117,
-        "name": "Agadir"
-    },
-    {
-        "id": 118,
-        "name": "Taroudant"
-    },
-    {
-        "id": 119,
-        "name": "Tiznit"
-    },
-    {
-        "id": 120,
-        "name": "Igherem"
-    },
-    {
-        "id": 121,
-        "name": "Talouine"
-    },
-    {
-        "id": 122,
-        "name": "Tafraouet"
-    },
-    {
-        "id": 123,
-        "name": "Tata"
-    },
-    {
-        "id": 124,
-        "name": "Akka"
-    },
-    {
-        "id": 125,
-        "name": "Fem Lehsan"
-    },
-    {
-        "id": 126,
-        "name": "Bouikra"
-    },
-    {
-        "id": 127,
-        "name": "Oulad Tayma"
-    },
-    {
-        "id": 128,
-        "name": "Errachidia"
-    },
-    {
-        "id": 129,
-        "name": "Risani"
-    },
-    {
-        "id": 130,
-        "name": "Arfoud"
-    },
-    {
-        "id": 131,
-        "name": "Tindit"
-    },
-    {
-        "id": 132,
-        "name": "Kelmima"
-    },
-    {
-        "id": 133,
-        "name": "Imelchil"
-    },
-    {
-        "id": 134,
-        "name": "Tenjedad"
-    },
-    {
-        "id": 135,
-        "name": "Erich"
-    },
-    {
-        "id": 136,
-        "name": "Midelt"
-    },
-    {
-        "id": 137,
-        "name": "Zagoura"
-    },
-    {
-        "id": 138,
-        "name": "Ourzazate"
-    },
-    {
-        "id": 139,
-        "name": "Tenghir"
-    },
-    {
-        "id": 140,
-        "name": "Meskoura"
-    },
-    {
-        "id": 141,
-        "name": "Kalaat Megouna"
-    },
-    {
-        "id": 142,
-        "name": "Akdez"
-    },
-    {
-        "id": 143,
-        "name": "Boumalen Dadas"
-    },
-    {
-        "id": 144,
-        "name": "Enif"
-    },
-    {
-        "id": 145,
-        "name": "Asoul"
-    },
-    {
-        "id": 146,
-        "name": "Amsmrir"
-    },
-    {
-        "id": 147,
-        "name": "Tazarin"
-    },
-    {
-        "id": 148,
-        "name": "Sidi Ifni"
-    },
-    {
-        "id": 149,
-        "name": "Guelmim"
-    },
-    {
-        "id": 150,
-        "name": "Asa"
-    },
-    {
-        "id": 151,
-        "name": "Ezak"
-    },
-    {
-        "id": 152,
-        "name": "Tantan"
-    },
-    {
-        "id": 153,
-        "name": "Bouizkaren"
-    },
-    {
-        "id": 154,
-        "name": "El Mahbes"
-    },
-    {
-        "id": 155,
-        "name": "L'msid"
-    },
-    {
-        "id": 156,
-        "name": "Laayoune"
-    },
-    {
-        "id": 157,
-        "name": "Smara"
-    },
-    {
-        "id": 158,
-        "name": "Boujdour"
-    },
-    {
-        "id": 159,
-        "name": "Tarfaya"
-    },
-    {
-        "id": 160,
-        "name": "Tefariti"
-    },
-    {
-        "id": 161,
-        "name": "Boukrae"
-    },
-    {
-        "id": 162,
-        "name": "Geltat Zamour"
-    },
-    {
-        "id": 163,
-        "name": "Amkala"
-    },
-    {
-        "id": 164,
-        "name": "Akhefnir"
-    },
-    {
-        "id": 165,
-        "name": "Dakhla"
-    },
-    {
-        "id": 166,
-        "name": "Lagouira"
-    },
-    {
-        "id": 167,
-        "name": "Ousered"
-    },
-    {
-        "id": 168,
-        "name": "Bir Kandour"
-    },
-    {
-        "id": 169,
-        "name": "Bir Anzaran"
-    },
-    {
-        "id": 301,
-        "name": "Khemis Sidi Abd Jelil"
-    },
-    {
-        "id": 302,
-        "name": "Oulad Ayad"
-    },
-    {
-        "id": 303,
-        "name": "Tahla"
-    },
-    {
-        "id": 304,
-        "name": "Metmata"
-    },
-    {
-        "id": 305,
-        "name": "Imntanout"
-    },
-    {
-        "id": 306,
-        "name": "Sidi Ghanem"
-    },
-    {
-        "id": 307,
-        "name": "Tafntan"
-    },
-    {
-        "id": 308,
-        "name": "Ait El Kak"
-    },
-    {
-        "id": 309,
-        "name": "Akdal Amelchil"
-    },
-    {
-        "id": 310,
-        "name": "Akoudal Amelchil Midelt"
-    },
-    {
-        "id": 311,
-        "name": "Akayouar"
-    },
-    {
-        "id": 312,
-        "name": "Ain Aouda"
-    },
-    {
-        "id": 313,
-        "name": "Askin"
-    },
-    {
-        "id": 314,
-        "name": "Ait Ourir"
-    },
-    {
-        "id": 315,
-        "name": "Zaouiat Moulay Ibrahim"
-    },
-    {
-        "id": 316,
-        "name": "Toulkoult"
-    },
-    {
-        "id": 317,
-        "name": "Ikes"
-    },
-    {
-        "id": 318,
-        "name": "Kares"
-    },
-    {
-        "id": 319,
-        "name": "Tisenet"
-    },
-    {
-        "id": 320,
-        "name": "Fem Zkid"
-    },
-    {
-        "id": 321,
-        "name": "Ksar Ich"
-    },
-    {
-        "id": 322,
-        "name": "Imin Telat"
-    }
+  {
+    "id": 1,
+    "arabicName": "الرباط",
+    "frenchName": "Rabat",
+    "long_d": 6,
+    "long_m": 51,
+    "lat_d": 34,
+    "lat_m": 1,
+    "alt": 120
+  },
+  {
+    "id": 2,
+    "arabicName": "الخميسات",
+    "frenchName": "Khemisset",
+    "long_d": 6,
+    "long_m": 5,
+    "lat_d": 33,
+    "lat_m": 50,
+    "alt": 460
+  },
+  {
+    "id": 3,
+    "arabicName": "تيفلت",
+    "frenchName": "Tiflet",
+    "long_d": 6,
+    "long_m": 20,
+    "lat_d": 33,
+    "lat_m": 55,
+    "alt": 460
+  },
+  {
+    "id": 4,
+    "arabicName": "الرماني",
+    "frenchName": "Rommani",
+    "long_d": 6,
+    "long_m": 36,
+    "lat_d": 33,
+    "lat_m": 31,
+    "alt": 500
+  },
+  {
+    "id": 5,
+    "arabicName": "والماس",
+    "frenchName": "Oulmes",
+    "long_d": 6,
+    "long_m": 0,
+    "lat_d": 33,
+    "lat_m": 25,
+    "alt": 1260
+  },
+  {
+    "id": 6,
+    "arabicName": "بوزنيقة",
+    "frenchName": "Bouznika",
+    "long_d": 7,
+    "long_m": 10,
+    "lat_d": 33,
+    "lat_m": 48,
+    "alt": 100
+  },
+  {
+    "id": 7,
+    "arabicName": "القنيطرة",
+    "frenchName": "Kenitra",
+    "long_d": 6,
+    "long_m": 36,
+    "lat_d": 34,
+    "lat_m": 15,
+    "alt": 200
+  },
+  {
+    "id": 8,
+    "arabicName": "سيدي قاسم",
+    "frenchName": "Sidi Kacem",
+    "long_d": 5,
+    "long_m": 43,
+    "lat_d": 34,
+    "lat_m": 13,
+    "alt": 450
+  },
+  {
+    "id": 9,
+    "arabicName": "سيدي يحيى الغرب",
+    "frenchName": "Sidi Yahya El Gharb",
+    "long_d": 6,
+    "long_m": 19,
+    "lat_d": 34,
+    "lat_m": 19,
+    "alt": 200
+  },
+  {
+    "id": 10,
+    "arabicName": "سيدي سليمان",
+    "frenchName": "Sidi Slimane",
+    "long_d": 5,
+    "long_m": 57,
+    "lat_d": 34,
+    "lat_m": 16,
+    "alt": 100
+  },
+  {
+    "id": 11,
+    "arabicName": "سوق أربعاء الغرب",
+    "frenchName": "Souk el Arbaa",
+    "long_d": 6,
+    "long_m": 19,
+    "lat_d": 34,
+    "lat_m": 19,
+    "alt": 100
+  },
+  {
+    "id": 12,
+    "arabicName": "عرباوة",
+    "frenchName": "Arbaoua",
+    "long_d": 5,
+    "long_m": 56,
+    "lat_d": 34,
+    "lat_m": 55,
+    "alt": 200
+  },
+  {
+    "id": 13,
+    "arabicName": "مولاي بوسلهام",
+    "frenchName": "Moulay Bousselham",
+    "long_d": 6,
+    "long_m": 17,
+    "lat_d": 34,
+    "lat_m": 53,
+    "alt": 100
+  },
+  {
+    "id": 14,
+    "arabicName": "طنجة",
+    "frenchName": "Tanger",
+    "long_d": 5,
+    "long_m": 49,
+    "lat_d": 35,
+    "lat_m": 46,
+    "alt": 300
+  },
+  {
+    "id": 15,
+    "arabicName": "تطوان",
+    "frenchName": "Tetouan",
+    "long_d": 5,
+    "long_m": 22,
+    "lat_d": 35,
+    "lat_m": 34,
+    "alt": 520
+  },
+  {
+    "id": 16,
+    "arabicName": "العرائش",
+    "frenchName": "Larache",
+    "long_d": 6,
+    "long_m": 9,
+    "lat_d": 35,
+    "lat_m": 11,
+    "alt": 100
+  },
+  {
+    "id": 17,
+    "arabicName": "أصيلة",
+    "frenchName": "Asilah",
+    "long_d": 6,
+    "long_m": 3,
+    "lat_d": 35,
+    "lat_m": 28,
+    "alt": 120
+  },
+  {
+    "id": 18,
+    "arabicName": "شفشاون",
+    "frenchName": "Chefchaouen",
+    "long_d": 5,
+    "long_m": 16,
+    "lat_d": 35,
+    "lat_m": 10,
+    "alt": 1150
+  },
+  {
+    "id": 19,
+    "arabicName": "مرتيل",
+    "frenchName": "Martil",
+    "long_d": 5,
+    "long_m": 17,
+    "lat_d": 35,
+    "lat_m": 37,
+    "alt": 100
+  },
+  {
+    "id": 20,
+    "arabicName": "المضيق",
+    "frenchName": "M'diq",
+    "long_d": 5,
+    "long_m": 20,
+    "lat_d": 35,
+    "lat_m": 41,
+    "alt": 100
+  },
+  {
+    "id": 21,
+    "arabicName": "القصر الكبير",
+    "frenchName": "Ksar El Kebir",
+    "long_d": 5,
+    "long_m": 55,
+    "lat_d": 35,
+    "lat_m": 0,
+    "alt": 150
+  },
+  {
+    "id": 22,
+    "arabicName": "القصر الصغير",
+    "frenchName": "Ksar Sghir",
+    "long_d": 5,
+    "long_m": 34,
+    "lat_d": 35,
+    "lat_m": 50,
+    "alt": 150
+  },
+  {
+    "id": 23,
+    "arabicName": "الحسيمة",
+    "frenchName": "Al Hoceima",
+    "long_d": 3,
+    "long_m": 56,
+    "lat_d": 35,
+    "lat_m": 15,
+    "alt": 200
+  },
+  {
+    "id": 24,
+    "arabicName": "سبتة",
+    "frenchName": "Ceuta",
+    "long_d": 5,
+    "long_m": 21,
+    "lat_d": 35,
+    "lat_m": 53,
+    "alt": 500
+  },
+  {
+    "id": 25,
+    "arabicName": "الفنيدق",
+    "frenchName": "Fnideq",
+    "long_d": 5,
+    "long_m": 22,
+    "lat_d": 35,
+    "lat_m": 51,
+    "alt": 250
+  },
+  {
+    "id": 26,
+    "arabicName": "الجبهة",
+    "frenchName": "El Jebha",
+    "long_d": 4,
+    "long_m": 40,
+    "lat_d": 35,
+    "lat_m": 12,
+    "alt": 250
+  },
+  {
+    "id": 27,
+    "arabicName": "واد لاو",
+    "frenchName": "Oued Laou",
+    "long_d": 5,
+    "long_m": 6,
+    "lat_d": 35,
+    "lat_m": 26,
+    "alt": 100
+  },
+  {
+    "id": 28,
+    "arabicName": "باب برد",
+    "frenchName": "Bab Berred",
+    "long_d": 4,
+    "long_m": 53,
+    "lat_d": 35,
+    "lat_m": 0,
+    "alt": 1230
+  },
+  {
+    "id": 29,
+    "arabicName": "وزان",
+    "frenchName": "Ouezzane",
+    "long_d": 5,
+    "long_m": 35,
+    "lat_d": 34,
+    "lat_m": 48,
+    "alt": 700
+  },
+  {
+    "id": 30,
+    "arabicName": "بوسكور",
+    "frenchName": "Bouskour",
+    "long_d": 3,
+    "long_m": 36,
+    "lat_d": 34,
+    "lat_m": 42,
+    "alt": 400
+  },
+  {
+    "id": 31,
+    "arabicName": "وجدة",
+    "frenchName": "Oujda",
+    "long_d": 1,
+    "long_m": 56,
+    "lat_d": 34,
+    "lat_m": 41,
+    "alt": 730
+  },
+  {
+    "id": 32,
+    "arabicName": "بركان",
+    "frenchName": "Berkane",
+    "long_d": 2,
+    "long_m": 21,
+    "lat_d": 34,
+    "lat_m": 55,
+    "alt": 200
+  },
+  {
+    "id": 33,
+    "arabicName": "فكيك",
+    "frenchName": "Figuig",
+    "long_d": 1,
+    "long_m": 14,
+    "lat_d": 32,
+    "lat_m": 7,
+    "alt": 900
+  },
+  {
+    "id": 34,
+    "arabicName": "بوعرفة",
+    "frenchName": "Bouarfa",
+    "long_d": 1,
+    "long_m": 58,
+    "lat_d": 32,
+    "lat_m": 32,
+    "alt": 900
+  },
+  {
+    "id": 35,
+    "arabicName": "كرسيف",
+    "frenchName": "Guercif",
+    "long_d": 3,
+    "long_m": 22,
+    "lat_d": 34,
+    "lat_m": 13,
+    "alt": 400
+  },
+  {
+    "id": 36,
+    "arabicName": "جرادة",
+    "frenchName": "Jerada",
+    "long_d": 2,
+    "long_m": 10,
+    "lat_d": 34,
+    "lat_m": 19,
+    "alt": 1070
+  },
+  {
+    "id": 37,
+    "arabicName": "عين الشعير",
+    "frenchName": "Ain Chouater",
+    "long_d": 2,
+    "long_m": 31,
+    "lat_d": 32,
+    "lat_m": 12,
+    "alt": 900
+  },
+  {
+    "id": 38,
+    "arabicName": "تاوريرت",
+    "frenchName": "Taourirt",
+    "long_d": 2,
+    "long_m": 53,
+    "lat_d": 34,
+    "lat_m": 25,
+    "alt": 1000
+  },
+  {
+    "id": 39,
+    "arabicName": "الناظور",
+    "frenchName": "Nador",
+    "long_d": 2,
+    "long_m": 56,
+    "lat_d": 35,
+    "lat_m": 11,
+    "alt": 200
+  },
+  {
+    "id": 40,
+    "arabicName": "مليلية",
+    "frenchName": "Melilla",
+    "long_d": 2,
+    "long_m": 58,
+    "lat_d": 35,
+    "lat_m": 18,
+    "alt": 100
+  },
+  {
+    "id": 41,
+    "arabicName": "دبدو",
+    "frenchName": "Debdou",
+    "long_d": 3,
+    "long_m": 1,
+    "lat_d": 34,
+    "lat_m": 0,
+    "alt": 1100
+  },
+  {
+    "id": 42,
+    "arabicName": "سلوان",
+    "frenchName": "Selouane",
+    "long_d": 2,
+    "long_m": 56,
+    "lat_d": 35,
+    "lat_m": 4,
+    "alt": 300
+  },
+  {
+    "id": 43,
+    "arabicName": "بني أنصار",
+    "frenchName": "Beni Ensar",
+    "long_d": 2,
+    "long_m": 55,
+    "lat_d": 35,
+    "lat_m": 16,
+    "alt": 200
+  },
+  {
+    "id": 44,
+    "arabicName": "فرخانة",
+    "frenchName": "Farkhana",
+    "long_d": 2,
+    "long_m": 59,
+    "lat_d": 35,
+    "lat_m": 17,
+    "alt": 200
+  },
+  {
+    "id": 45,
+    "arabicName": "تالسينت",
+    "frenchName": "Talsint",
+    "long_d": 3,
+    "long_m": 26,
+    "lat_d": 32,
+    "lat_m": 32,
+    "alt": 1450
+  },
+  {
+    "id": 46,
+    "arabicName": "تندرارة",
+    "frenchName": "Tendrara",
+    "long_d": 2,
+    "long_m": 0,
+    "lat_d": 33,
+    "lat_m": 3,
+    "alt": 1470
+  },
+  {
+    "id": 47,
+    "arabicName": "العيون الشرقية",
+    "frenchName": "El Aioun Sidi Mellouk",
+    "long_d": 2,
+    "long_m": 30,
+    "lat_d": 34,
+    "lat_m": 35,
+    "alt": 620
+  },
+  {
+    "id": 48,
+    "arabicName": "بني ادرار",
+    "frenchName": "Bni Drar",
+    "long_d": 1,
+    "long_m": 59,
+    "lat_d": 34,
+    "lat_m": 49,
+    "alt": 520
+  },
+  {
+    "id": 49,
+    "arabicName": "السعيدية",
+    "frenchName": "Saidia",
+    "long_d": 2,
+    "long_m": 15,
+    "lat_d": 35,
+    "lat_m": 11,
+    "alt": 100
+  },
+  {
+    "id": 50,
+    "arabicName": "رأس الماء",
+    "frenchName": "Ras El Ma",
+    "long_d": 2,
+    "long_m": 25,
+    "lat_d": 35,
+    "lat_m": 9,
+    "alt": 100
+  },
+  {
+    "id": 51,
+    "arabicName": "تافوغالت",
+    "frenchName": "Tafoughalt",
+    "long_d": 2,
+    "long_m": 24,
+    "lat_d": 34,
+    "lat_m": 48,
+    "alt": 890
+  },
+  {
+    "id": 52,
+    "arabicName": "فزوان",
+    "frenchName": "Fezouan",
+    "long_d": 2,
+    "long_m": 12,
+    "lat_d": 34,
+    "lat_m": 55,
+    "alt": 800
+  },
+  {
+    "id": 53,
+    "arabicName": "أحفير",
+    "frenchName": "Ahfir",
+    "long_d": 2,
+    "long_m": 6,
+    "lat_d": 34,
+    "lat_m": 57,
+    "alt": 300
+  },
+  {
+    "id": 54,
+    "arabicName": "زايو",
+    "frenchName": "Zaio",
+    "long_d": 2,
+    "long_m": 43,
+    "lat_d": 34,
+    "lat_m": 56,
+    "alt": 600
+  },
+  {
+    "id": 55,
+    "arabicName": "دريوش",
+    "frenchName": "Driouch",
+    "long_d": 3,
+    "long_m": 23,
+    "lat_d": 34,
+    "lat_m": 58,
+    "alt": 600
+  },
+  {
+    "id": 56,
+    "arabicName": "بني تجيت",
+    "frenchName": "Bni Tadjite",
+    "long_d": 3,
+    "long_m": 28,
+    "lat_d": 32,
+    "lat_m": 18,
+    "alt": 1360
+  },
+  {
+    "id": 57,
+    "arabicName": "بوعنان",
+    "frenchName": "Bouanane",
+    "long_d": 3,
+    "long_m": 3,
+    "lat_d": 32,
+    "lat_m": 3,
+    "alt": 860
+  },
+  {
+    "id": 58,
+    "arabicName": "الدار البيضاء",
+    "frenchName": "Casablanca",
+    "long_d": 7,
+    "long_m": 40,
+    "lat_d": 33,
+    "lat_m": 34,
+    "alt": 200
+  },
+  {
+    "id": 59,
+    "arabicName": "المحمدية",
+    "frenchName": "Mohammedia",
+    "long_d": 7,
+    "long_m": 24,
+    "lat_d": 33,
+    "lat_m": 42,
+    "alt": 100
+  },
+  {
+    "id": 60,
+    "arabicName": "بن سليمان",
+    "frenchName": "Benslimane",
+    "long_d": 7,
+    "long_m": 8,
+    "lat_d": 33,
+    "lat_m": 37,
+    "alt": 300
+  },
+  {
+    "id": 61,
+    "arabicName": "سطات",
+    "frenchName": "Settat",
+    "long_d": 7,
+    "long_m": 38,
+    "lat_d": 33,
+    "lat_m": 0,
+    "alt": 410
+  },
+  {
+    "id": 62,
+    "arabicName": "الكارة",
+    "frenchName": "El Gara",
+    "long_d": 7,
+    "long_m": 14,
+    "lat_d": 33,
+    "lat_m": 17,
+    "alt": 420
+  },
+  {
+    "id": 63,
+    "arabicName": "البروج",
+    "frenchName": "El Borouj",
+    "long_d": 7,
+    "long_m": 12,
+    "lat_d": 32,
+    "lat_m": 30,
+    "alt": 500
+  },
+  {
+    "id": 64,
+    "arabicName": "ابن أحمد",
+    "frenchName": "Bin Ahmed",
+    "long_d": 7,
+    "long_m": 15,
+    "lat_d": 33,
+    "lat_m": 4,
+    "alt": 650
+  },
+  {
+    "id": 65,
+    "arabicName": "برشيد",
+    "frenchName": "Berrechid",
+    "long_d": 7,
+    "long_m": 35,
+    "lat_d": 33,
+    "lat_m": 16,
+    "alt": 250
+  },
+  {
+    "id": 66,
+    "arabicName": "الجديدة",
+    "frenchName": "El Jadida",
+    "long_d": 8,
+    "long_m": 31,
+    "lat_d": 33,
+    "lat_m": 15,
+    "alt": 100
+  },
+  {
+    "id": 67,
+    "arabicName": "أزمور",
+    "frenchName": "Azemmour",
+    "long_d": 8,
+    "long_m": 21,
+    "lat_d": 33,
+    "lat_m": 17,
+    "alt": 150
+  },
+  {
+    "id": 68,
+    "arabicName": "سيدي بنور",
+    "frenchName": "Sidi Bennour",
+    "long_d": 8,
+    "long_m": 26,
+    "lat_d": 32,
+    "lat_m": 40,
+    "alt": 190
+  },
+  {
+    "id": 69,
+    "arabicName": "خميس الزمامرة",
+    "frenchName": "Zemamra",
+    "long_d": 8,
+    "long_m": 43,
+    "lat_d": 32,
+    "lat_m": 37,
+    "alt": 200
+  },
+  {
+    "id": 70,
+    "arabicName": "خنيفرة",
+    "frenchName": "Khenifra",
+    "long_d": 5,
+    "long_m": 41,
+    "lat_d": 32,
+    "lat_m": 56,
+    "alt": 1000
+  },
+  {
+    "id": 71,
+    "arabicName": "مولاي بوعزة",
+    "frenchName": "Moulay Bouazza",
+    "long_d": 6,
+    "long_m": 12,
+    "lat_d": 33,
+    "lat_m": 14,
+    "alt": 900
+  },
+  {
+    "id": 72,
+    "arabicName": "زاوية أحنصال",
+    "frenchName": "Zaouiat Ahansal",
+    "long_d": 6,
+    "long_m": 7,
+    "lat_d": 31,
+    "lat_m": 50,
+    "alt": 2500
+  },
+  {
+    "id": 73,
+    "arabicName": "بني ملال",
+    "frenchName": "Beni Mellal",
+    "long_d": 6,
+    "long_m": 22,
+    "lat_d": 32,
+    "lat_m": 20,
+    "alt": 1200
+  },
+  {
+    "id": 74,
+    "arabicName": "أزيلال",
+    "frenchName": "Azilal",
+    "long_d": 6,
+    "long_m": 35,
+    "lat_d": 31,
+    "lat_m": 57,
+    "alt": 1700
+  },
+  {
+    "id": 75,
+    "arabicName": "الفقيه بنصالح",
+    "frenchName": "Fquih Ben Salah",
+    "long_d": 6,
+    "long_m": 42,
+    "lat_d": 32,
+    "lat_m": 30,
+    "alt": 500
+  },
+  {
+    "id": 76,
+    "arabicName": "دمنات",
+    "frenchName": "Demnate",
+    "long_d": 7,
+    "long_m": 1,
+    "lat_d": 31,
+    "lat_m": 44,
+    "alt": 1700
+  },
+  {
+    "id": 77,
+    "arabicName": "القصيبة",
+    "frenchName": "El Ksiba",
+    "long_d": 6,
+    "long_m": 3,
+    "lat_d": 32,
+    "lat_m": 34,
+    "alt": 1300
+  },
+  {
+    "id": 78,
+    "arabicName": "قصبة تادلة",
+    "frenchName": "Kasba Tadla",
+    "long_d": 6,
+    "long_m": 17,
+    "lat_d": 32,
+    "lat_m": 36,
+    "alt": 540
+  },
+  {
+    "id": 79,
+    "arabicName": "خريبكة",
+    "frenchName": "Khouribga",
+    "long_d": 6,
+    "long_m": 55,
+    "lat_d": 32,
+    "lat_m": 53,
+    "alt": 830
+  },
+  {
+    "id": 80,
+    "arabicName": "وادي زم",
+    "frenchName": "Oued Zem",
+    "long_d": 6,
+    "long_m": 35,
+    "lat_d": 32,
+    "lat_m": 52,
+    "alt": 880
+  },
+  {
+    "id": 81,
+    "arabicName": "فاس",
+    "frenchName": "Fes",
+    "long_d": 5,
+    "long_m": 1,
+    "lat_d": 34,
+    "lat_m": 4,
+    "alt": 450
+  },
+  {
+    "id": 82,
+    "arabicName": "صفرو",
+    "frenchName": "Sefrou",
+    "long_d": 4,
+    "long_m": 51,
+    "lat_d": 33,
+    "lat_m": 50,
+    "alt": 1000
+  },
+  {
+    "id": 83,
+    "arabicName": "مولاي يعقوب",
+    "frenchName": "Moulay Yacoub",
+    "long_d": 5,
+    "long_m": 11,
+    "lat_d": 34,
+    "lat_m": 5,
+    "alt": 400
+  },
+  {
+    "id": 84,
+    "arabicName": "بولمان",
+    "frenchName": "Boulemane",
+    "long_d": 4,
+    "long_m": 44,
+    "lat_d": 33,
+    "lat_m": 22,
+    "alt": 2500
+  },
+  {
+    "id": 85,
+    "arabicName": "ميسور",
+    "frenchName": "Missour",
+    "long_d": 4,
+    "long_m": 1,
+    "lat_d": 33,
+    "lat_m": 3,
+    "alt": 900
+  },
+  {
+    "id": 86,
+    "arabicName": "رباط الخير",
+    "frenchName": "Ribate El Kheir",
+    "long_d": 4,
+    "long_m": 25,
+    "lat_d": 33,
+    "lat_m": 49,
+    "alt": 1500
+  },
+  {
+    "id": 87,
+    "arabicName": "المنزل بني يازغة",
+    "frenchName": "El Menzel",
+    "long_d": 4,
+    "long_m": 33,
+    "lat_d": 33,
+    "lat_m": 50,
+    "alt": 1050
+  },
+  {
+    "id": 88,
+    "arabicName": "إموزار كندر",
+    "frenchName": "Imouzzer Kandar",
+    "long_d": 5,
+    "long_m": 1,
+    "lat_d": 33,
+    "lat_m": 44,
+    "alt": 1520
+  },
+  {
+    "id": 89,
+    "arabicName": "تازة",
+    "frenchName": "Taza",
+    "long_d": 4,
+    "long_m": 1,
+    "lat_d": 34,
+    "lat_m": 13,
+    "alt": 900
+  },
+  {
+    "id": 90,
+    "arabicName": "تاونات",
+    "frenchName": "Taounate",
+    "long_d": 4,
+    "long_m": 39,
+    "lat_d": 34,
+    "lat_m": 32,
+    "alt": 800
+  },
+  {
+    "id": 91,
+    "arabicName": "أكنول",
+    "frenchName": "Aknoul",
+    "long_d": 3,
+    "long_m": 53,
+    "lat_d": 34,
+    "lat_m": 39,
+    "alt": 1350
+  },
+  {
+    "id": 92,
+    "arabicName": "تيزي وسلي",
+    "frenchName": "Tizi Ouasli",
+    "long_d": 3,
+    "long_m": 48,
+    "lat_d": 34,
+    "lat_m": 46,
+    "alt": 1450
+  },
+  {
+    "id": 93,
+    "arabicName": "بورد",
+    "frenchName": "Boured",
+    "long_d": 4,
+    "long_m": 6,
+    "lat_d": 34,
+    "lat_m": 44,
+    "alt": 900
+  },
+  {
+    "id": 94,
+    "arabicName": "تاهلة",
+    "frenchName": "Tahla",
+    "long_d": 4,
+    "long_m": 26,
+    "lat_d": 34,
+    "lat_m": 3,
+    "alt": 520
+  },
+  {
+    "id": 95,
+    "arabicName": "تيسة",
+    "frenchName": "Tissa",
+    "long_d": 4,
+    "long_m": 41,
+    "lat_d": 34,
+    "lat_m": 18,
+    "alt": 310
+  },
+  {
+    "id": 96,
+    "arabicName": "قرية با محمد",
+    "frenchName": "Karia Ba Mohamed",
+    "long_d": 5,
+    "long_m": 13,
+    "lat_d": 34,
+    "lat_m": 22,
+    "alt": 250
+  },
+  {
+    "id": 97,
+    "arabicName": "كتامة",
+    "frenchName": "Ketama",
+    "long_d": 4,
+    "long_m": 38,
+    "lat_d": 34,
+    "lat_m": 53,
+    "alt": 1750
+  },
+  {
+    "id": 98,
+    "arabicName": "واد أمليل",
+    "frenchName": "Oued Amlil",
+    "long_d": 4,
+    "long_m": 17,
+    "lat_d": 34,
+    "lat_m": 11,
+    "alt": 400
+  },
+  {
+    "id": 99,
+    "arabicName": "مكناس",
+    "frenchName": "Meknes",
+    "long_d": 5,
+    "long_m": 35,
+    "lat_d": 33,
+    "lat_m": 54,
+    "alt": 600
+  },
+  {
+    "id": 100,
+    "arabicName": "يفرن",
+    "frenchName": "Ifrane",
+    "long_d": 5,
+    "long_m": 7,
+    "lat_d": 33,
+    "lat_m": 32,
+    "alt": 1500
+  },
+  {
+    "id": 101,
+    "arabicName": "الحاجب",
+    "frenchName": "El Hajeb",
+    "long_d": 5,
+    "long_m": 23,
+    "lat_d": 33,
+    "lat_m": 41,
+    "alt": 1160
+  },
+  {
+    "id": 102,
+    "arabicName": "زرهون",
+    "frenchName": "Moulay Driss Zerhoun",
+    "long_d": 5,
+    "long_m": 32,
+    "lat_d": 34,
+    "lat_m": 3,
+    "alt": 860
+  },
+  {
+    "id": 103,
+    "arabicName": "آزرو",
+    "frenchName": "Azrou",
+    "long_d": 5,
+    "long_m": 14,
+    "lat_d": 33,
+    "lat_m": 26,
+    "alt": 1430
+  },
+  {
+    "id": 104,
+    "arabicName": "مراكش",
+    "frenchName": "Marrakech",
+    "long_d": 8,
+    "long_m": 2,
+    "lat_d": 31,
+    "lat_m": 38,
+    "alt": 600
+  },
+  {
+    "id": 105,
+    "arabicName": "قلعة السراغنة",
+    "frenchName": "Kelaat Sraghna",
+    "long_d": 7,
+    "long_m": 25,
+    "lat_d": 32,
+    "lat_m": 3,
+    "alt": 550
+  },
+  {
+    "id": 106,
+    "arabicName": "الصويرة",
+    "frenchName": "Essaouira",
+    "long_d": 9,
+    "long_m": 47,
+    "lat_d": 31,
+    "lat_m": 31,
+    "alt": 120
+  },
+  {
+    "id": 107,
+    "arabicName": "شيشاوة",
+    "frenchName": "Chichaoua",
+    "long_d": 8,
+    "long_m": 46,
+    "lat_d": 31,
+    "lat_m": 33,
+    "alt": 500
+  },
+  {
+    "id": 108,
+    "arabicName": "بنجرير",
+    "frenchName": "Benguerir",
+    "long_d": 7,
+    "long_m": 58,
+    "lat_d": 32,
+    "lat_m": 14,
+    "alt": 550
+  },
+  {
+    "id": 109,
+    "arabicName": "الرحامنة",
+    "frenchName": "Rehamna",
+    "long_d": 7,
+    "long_m": 55,
+    "lat_d": 32,
+    "lat_m": 29,
+    "alt": 750
+  },
+  {
+    "id": 110,
+    "arabicName": "تمنار",
+    "frenchName": "Tamanar",
+    "long_d": 9,
+    "long_m": 41,
+    "lat_d": 31,
+    "lat_m": 0,
+    "alt": 450
+  },
+  {
+    "id": 111,
+    "arabicName": "آسفي",
+    "frenchName": "Safi",
+    "long_d": 9,
+    "long_m": 15,
+    "lat_d": 32,
+    "lat_m": 18,
+    "alt": 150
+  },
+  {
+    "id": 112,
+    "arabicName": "الوليدية",
+    "frenchName": "Oualidia",
+    "long_d": 9,
+    "long_m": 2,
+    "lat_d": 32,
+    "lat_m": 43,
+    "alt": 100
+  },
+  {
+    "id": 113,
+    "arabicName": "اليوسفية",
+    "frenchName": "Youssoufia",
+    "long_d": 8,
+    "long_m": 32,
+    "lat_d": 32,
+    "lat_m": 15,
+    "alt": 460
+  },
+  {
+    "id": 114,
+    "arabicName": "تسلطانت",
+    "frenchName": "Tassoultante",
+    "long_d": 7,
+    "long_m": 57,
+    "lat_d": 31,
+    "lat_m": 33,
+    "alt": 600
+  },
+  {
+    "id": 115,
+    "arabicName": "تامصلوحت",
+    "frenchName": "Tameslouht",
+    "long_d": 8,
+    "long_m": 6,
+    "lat_d": 31,
+    "lat_m": 30,
+    "alt": 600
+  },
+  {
+    "id": 116,
+    "arabicName": "قطارة",
+    "frenchName": "Ghattara",
+    "long_d": 8,
+    "long_m": 10,
+    "lat_d": 31,
+    "lat_m": 52,
+    "alt": 600
+  },
+  {
+    "id": 117,
+    "arabicName": "أكادير",
+    "frenchName": "Agadir",
+    "long_d": 9,
+    "long_m": 34,
+    "lat_d": 30,
+    "lat_m": 23,
+    "alt": 300
+  },
+  {
+    "id": 118,
+    "arabicName": "تارودانت",
+    "frenchName": "Taroudant",
+    "long_d": 8,
+    "long_m": 48,
+    "lat_d": 30,
+    "lat_m": 29,
+    "alt": 300
+  },
+  {
+    "id": 119,
+    "arabicName": "تزنيت",
+    "frenchName": "Tiznit",
+    "long_d": 9,
+    "long_m": 44,
+    "lat_d": 29,
+    "lat_m": 42,
+    "alt": 300
+  },
+  {
+    "id": 120,
+    "arabicName": "إغرم",
+    "frenchName": "Ighrem",
+    "long_d": 8,
+    "long_m": 28,
+    "lat_d": 30,
+    "lat_m": 5,
+    "alt": 2000
+  },
+  {
+    "id": 121,
+    "arabicName": "تالوين",
+    "frenchName": "Taliouine",
+    "long_d": 7,
+    "long_m": 56,
+    "lat_d": 30,
+    "lat_m": 32,
+    "alt": 1450
+  },
+  {
+    "id": 122,
+    "arabicName": "تافراوت",
+    "frenchName": "Tafraout",
+    "long_d": 8,
+    "long_m": 59,
+    "lat_d": 29,
+    "lat_m": 43,
+    "alt": 1550
+  },
+  {
+    "id": 123,
+    "arabicName": "طاطا",
+    "frenchName": "Tata",
+    "long_d": 7,
+    "long_m": 59,
+    "lat_d": 29,
+    "lat_m": 45,
+    "alt": 720
+  },
+  {
+    "id": 124,
+    "arabicName": "أقا",
+    "frenchName": "Akka",
+    "long_d": 8,
+    "long_m": 15,
+    "lat_d": 29,
+    "lat_m": 24,
+    "alt": 1500
+  },
+  {
+    "id": 125,
+    "arabicName": "فم لحصن",
+    "frenchName": "Foum El Hassan",
+    "long_d": 8,
+    "long_m": 54,
+    "lat_d": 29,
+    "lat_m": 2,
+    "alt": 1040
+  },
+  {
+    "id": 126,
+    "arabicName": "بويكرة",
+    "frenchName": "Biougra",
+    "long_d": 9,
+    "long_m": 22,
+    "lat_d": 30,
+    "lat_m": 13,
+    "alt": 150
+  },
+  {
+    "id": 127,
+    "arabicName": "أولاد تايمة",
+    "frenchName": "Oulad Teima",
+    "long_d": 9,
+    "long_m": 13,
+    "lat_d": 30,
+    "lat_m": 24,
+    "alt": 300
+  },
+  {
+    "id": 128,
+    "arabicName": "الرشيدية",
+    "frenchName": "Errachidia",
+    "long_d": 4,
+    "long_m": 27,
+    "lat_d": 31,
+    "lat_m": 56,
+    "alt": 1000
+  },
+  {
+    "id": 129,
+    "arabicName": "الريصاني",
+    "frenchName": "Rissani",
+    "long_d": 4,
+    "long_m": 16,
+    "lat_d": 31,
+    "lat_m": 16,
+    "alt": 1000
+  },
+  {
+    "id": 130,
+    "arabicName": "أرفود",
+    "frenchName": "Erfoud",
+    "long_d": 4,
+    "long_m": 14,
+    "lat_d": 31,
+    "lat_m": 25,
+    "alt": 1000
+  },
+  {
+    "id": 131,
+    "arabicName": "تنديت",
+    "frenchName": "Tendit",
+    "long_d": 3,
+    "long_m": 38,
+    "lat_d": 33,
+    "lat_m": 40,
+    "alt": 750
+  },
+  {
+    "id": 132,
+    "arabicName": "كلميمة",
+    "frenchName": "Goulmima",
+    "long_d": 4,
+    "long_m": 57,
+    "lat_d": 31,
+    "lat_m": 42,
+    "alt": 1000
+  },
+  {
+    "id": 133,
+    "arabicName": "إملشيل",
+    "frenchName": "Imilchil",
+    "long_d": 5,
+    "long_m": 37,
+    "lat_d": 32,
+    "lat_m": 9,
+    "alt": 2200
+  },
+  {
+    "id": 134,
+    "arabicName": "تنجداد",
+    "frenchName": "Tinejdad",
+    "long_d": 5,
+    "long_m": 2,
+    "lat_d": 31,
+    "lat_m": 30,
+    "alt": 1000
+  },
+  {
+    "id": 135,
+    "arabicName": "الريش",
+    "frenchName": "Rich",
+    "long_d": 4,
+    "long_m": 28,
+    "lat_d": 32,
+    "lat_m": 16,
+    "alt": 1350
+  },
+  {
+    "id": 136,
+    "arabicName": "ميدلت",
+    "frenchName": "Midelt",
+    "long_d": 4,
+    "long_m": 45,
+    "lat_d": 32,
+    "lat_m": 41,
+    "alt": 1610
+  },
+  {
+    "id": 137,
+    "arabicName": "زاكورة",
+    "frenchName": "Zagora",
+    "long_d": 5,
+    "long_m": 51,
+    "lat_d": 30,
+    "lat_m": 19,
+    "alt": 800
+  },
+  {
+    "id": 138,
+    "arabicName": "ورزازات",
+    "frenchName": "Ouarzazate",
+    "long_d": 6,
+    "long_m": 56,
+    "lat_d": 30,
+    "lat_m": 55,
+    "alt": 1200
+  },
+  {
+    "id": 139,
+    "arabicName": "تنغير",
+    "frenchName": "Tinghir",
+    "long_d": 5,
+    "long_m": 32,
+    "lat_d": 31,
+    "lat_m": 30,
+    "alt": 1500
+  },
+  {
+    "id": 140,
+    "arabicName": "هسكورة",
+    "frenchName": "Skoura",
+    "long_d": 6,
+    "long_m": 33,
+    "lat_d": 31,
+    "lat_m": 4,
+    "alt": 1250
+  },
+  {
+    "id": 141,
+    "arabicName": "قلعة مكونة",
+    "frenchName": "Kelaat M'Gouna",
+    "long_d": 6,
+    "long_m": 9,
+    "lat_d": 31,
+    "lat_m": 14,
+    "alt": 1500
+  },
+  {
+    "id": 142,
+    "arabicName": "أكدز",
+    "frenchName": "Agdz",
+    "long_d": 6,
+    "long_m": 27,
+    "lat_d": 30,
+    "lat_m": 42,
+    "alt": 1550
+  },
+  {
+    "id": 143,
+    "arabicName": "بومالن دادس",
+    "frenchName": "Boumalne Dades",
+    "long_d": 6,
+    "long_m": 0,
+    "lat_d": 31,
+    "lat_m": 22,
+    "alt": 1600
+  },
+  {
+    "id": 144,
+    "arabicName": "النيف",
+    "frenchName": "Alnif",
+    "long_d": 5,
+    "long_m": 11,
+    "lat_d": 31,
+    "lat_m": 7,
+    "alt": 880
+  },
+  {
+    "id": 145,
+    "arabicName": "أسول",
+    "frenchName": "Assoul",
+    "long_d": 5,
+    "long_m": 11,
+    "lat_d": 31,
+    "lat_m": 56,
+    "alt": 2800
+  },
+  {
+    "id": 146,
+    "arabicName": "أمسمرير",
+    "frenchName": "M'Semrir",
+    "long_d": 5,
+    "long_m": 49,
+    "lat_d": 31,
+    "lat_m": 42,
+    "alt": 2100
+  },
+  {
+    "id": 147,
+    "arabicName": "تازارين",
+    "frenchName": "Tazzarine",
+    "long_d": 5,
+    "long_m": 34,
+    "lat_d": 30,
+    "lat_m": 46,
+    "alt": 500
+  },
+  {
+    "id": 148,
+    "arabicName": "سيدي إفني",
+    "frenchName": "Sidi Ifni",
+    "long_d": 10,
+    "long_m": 11,
+    "lat_d": 29,
+    "lat_m": 23,
+    "alt": 350
+  },
+  {
+    "id": 149,
+    "arabicName": "كلميم",
+    "frenchName": "Guelmim",
+    "long_d": 10,
+    "long_m": 4,
+    "lat_d": 28,
+    "lat_m": 59,
+    "alt": 650
+  },
+  {
+    "id": 150,
+    "arabicName": "أسا",
+    "frenchName": "Assa",
+    "long_d": 9,
+    "long_m": 27,
+    "lat_d": 28,
+    "lat_m": 34,
+    "alt": 300
+  },
+  {
+    "id": 151,
+    "arabicName": "الزاك",
+    "frenchName": "Zag",
+    "long_d": 9,
+    "long_m": 18,
+    "lat_d": 28,
+    "lat_m": 1,
+    "alt": 400
+  },
+  {
+    "id": 152,
+    "arabicName": "طانطان",
+    "frenchName": "Tan-Tan",
+    "long_d": 11,
+    "long_m": 7,
+    "lat_d": 28,
+    "lat_m": 26,
+    "alt": 300
+  },
+  {
+    "id": 153,
+    "arabicName": "بويزكارن",
+    "frenchName": "Bouizakarne",
+    "long_d": 9,
+    "long_m": 44,
+    "lat_d": 29,
+    "lat_m": 11,
+    "alt": 580
+  },
+  {
+    "id": 154,
+    "arabicName": "المحبس",
+    "frenchName": "Al Mahbass",
+    "long_d": 9,
+    "long_m": 3,
+    "lat_d": 27,
+    "lat_m": 24,
+    "alt": 450
+  },
+  {
+    "id": 155,
+    "arabicName": "لمسيد",
+    "frenchName": "Lemseid",
+    "long_d": 10,
+    "long_m": 48,
+    "lat_d": 28,
+    "lat_m": 1,
+    "alt": 500
+  },
+  {
+    "id": 156,
+    "arabicName": "العيون",
+    "frenchName": "Laayoune",
+    "long_d": 13,
+    "long_m": 14,
+    "lat_d": 27,
+    "lat_m": 9,
+    "alt": 100
+  },
+  {
+    "id": 157,
+    "arabicName": "السمارة",
+    "frenchName": "Smara",
+    "long_d": 11,
+    "long_m": 41,
+    "lat_d": 26,
+    "lat_m": 46,
+    "alt": 300
+  },
+  {
+    "id": 158,
+    "arabicName": "بوجدور",
+    "frenchName": "Boujdour",
+    "long_d": 14,
+    "long_m": 32,
+    "lat_d": 26,
+    "lat_m": 8,
+    "alt": 100
+  },
+  {
+    "id": 159,
+    "arabicName": "طرفاية",
+    "frenchName": "Tarfaya",
+    "long_d": 12,
+    "long_m": 56,
+    "lat_d": 27,
+    "lat_m": 56,
+    "alt": 100
+  },
+  {
+    "id": 160,
+    "arabicName": "تفاريتي",
+    "frenchName": "Tifariti",
+    "long_d": 10,
+    "long_m": 34,
+    "lat_d": 26,
+    "lat_m": 10,
+    "alt": 1000
+  },
+  {
+    "id": 161,
+    "arabicName": "بوكراع",
+    "frenchName": "Boukraa",
+    "long_d": 12,
+    "long_m": 50,
+    "lat_d": 26,
+    "lat_m": 22,
+    "alt": 300
+  },
+  {
+    "id": 162,
+    "arabicName": "كلتة زمور",
+    "frenchName": "Guelta Zemmur",
+    "long_d": 12,
+    "long_m": 22,
+    "lat_d": 25,
+    "lat_m": 8,
+    "alt": 300
+  },
+  {
+    "id": 163,
+    "arabicName": "أمكالة",
+    "frenchName": "Amgala",
+    "long_d": 11,
+    "long_m": 24,
+    "lat_d": 26,
+    "lat_m": 10,
+    "alt": 300
+  },
+  {
+    "id": 164,
+    "arabicName": "أخفنير",
+    "frenchName": "Akhfennir",
+    "long_d": 12,
+    "long_m": 3,
+    "lat_d": 28,
+    "lat_m": 3,
+    "alt": 300
+  },
+  {
+    "id": 165,
+    "arabicName": "الداخلة",
+    "frenchName": "Dakhla",
+    "long_d": 15,
+    "long_m": 59,
+    "lat_d": 23,
+    "lat_m": 42,
+    "alt": 150
+  },
+  {
+    "id": 166,
+    "arabicName": "الكويرة",
+    "frenchName": "Lagouira",
+    "long_d": 17,
+    "long_m": 6,
+    "lat_d": 20,
+    "lat_m": 50,
+    "alt": 100
+  },
+  {
+    "id": 167,
+    "arabicName": "أوسرد",
+    "frenchName": "Aousserd",
+    "long_d": 14,
+    "long_m": 18,
+    "lat_d": 22,
+    "lat_m": 33,
+    "alt": 300
+  },
+  {
+    "id": 168,
+    "arabicName": "بئر كندوز",
+    "frenchName": "Bir Gandouz",
+    "long_d": 16,
+    "long_m": 28,
+    "lat_d": 21,
+    "lat_m": 37,
+    "alt": 300
+  },
+  {
+    "id": 169,
+    "arabicName": "بئر أنزاران",
+    "frenchName": "Bir Anzarane",
+    "long_d": 14,
+    "long_m": 32,
+    "lat_d": 23,
+    "lat_m": 54,
+    "alt": 400
+  },
+  {
+    "id": 301,
+    "arabicName": "خميس سيدي عبد الجليل",
+    "frenchName": "Sidi Abdeljalil",
+    "long_d": 4,
+    "long_m": 35,
+    "lat_d": 34,
+    "lat_m": 6,
+    "alt": 590
+  },
+  {
+    "id": 302,
+    "arabicName": "أولاد عياد",
+    "frenchName": "Oulad Ayad",
+    "long_d": 4,
+    "long_m": 36,
+    "lat_d": 34,
+    "lat_m": 5,
+    "alt": 300
+  },
+  {
+    "id": 303,
+    "arabicName": "تاهلة",
+    "frenchName": "Tahla",
+    "long_d": 4,
+    "long_m": 25,
+    "lat_d": 34,
+    "lat_m": 3,
+    "alt": 520
+  },
+  {
+    "id": 304,
+    "arabicName": "مطماطة",
+    "frenchName": "Matmata",
+    "long_d": 4,
+    "long_m": 33,
+    "lat_d": 34,
+    "lat_m": 6,
+    "alt": 150
+  },
+  {
+    "id": 305,
+    "arabicName": "إيمنتانوت",
+    "frenchName": "Imintanout",
+    "long_d": 8,
+    "long_m": 51,
+    "lat_d": 31,
+    "lat_m": 11,
+    "alt": 900
+  },
+  {
+    "id": 306,
+    "arabicName": "سيدي غانم",
+    "frenchName": "Sidi Ghanem",
+    "long_d": 9,
+    "long_m": 27,
+    "lat_d": 31,
+    "lat_m": 18,
+    "alt": 1000
+  },
+  {
+    "id": 307,
+    "arabicName": "تفنتان",
+    "frenchName": "Tifentane",
+    "long_d": 7,
+    "long_m": 31,
+    "lat_d": 31,
+    "lat_m": 21,
+    "alt": 400
+  },
+  {
+    "id": 308,
+    "arabicName": "آيت القاق",
+    "frenchName": "Ait El Gak",
+    "long_d": 7,
+    "long_m": 47,
+    "lat_d": 31,
+    "lat_m": 14,
+    "alt": 2600
+  },
+  {
+    "id": 309,
+    "arabicName": "أكدال أملشيل",
+    "frenchName": "Agdal Imilchil",
+    "long_d": 5,
+    "long_m": 29,
+    "lat_d": 32,
+    "lat_m": 1,
+    "alt": 2200
+  },
+  {
+    "id": 310,
+    "arabicName": "اكودال املشيل ميدلت",
+    "frenchName": "Agoudal",
+    "long_d": 5,
+    "long_m": 29,
+    "lat_d": 32,
+    "lat_m": 1,
+    "alt": 1200
+  },
+  {
+    "id": 311,
+    "arabicName": "أكايوار",
+    "frenchName": "Akayouar",
+    "long_d": 7,
+    "long_m": 49,
+    "lat_d": 31,
+    "lat_m": 16,
+    "alt": 1200
+  },
+  {
+    "id": 312,
+    "arabicName": "عين العودة",
+    "frenchName": "Ain El Aouda",
+    "long_d": 6,
+    "long_m": 47,
+    "lat_d": 33,
+    "lat_m": 48,
+    "alt": 200
+  },
+  {
+    "id": 313,
+    "arabicName": "أسكين",
+    "frenchName": "Askin",
+    "long_d": 7,
+    "long_m": 46,
+    "lat_d": 31,
+    "lat_m": 20,
+    "alt": 1100
+  },
+  {
+    "id": 314,
+    "arabicName": "آيت ورير",
+    "frenchName": "Ait Ourir",
+    "long_d": 7,
+    "long_m": 39,
+    "lat_d": 31,
+    "lat_m": 34,
+    "alt": 700
+  },
+  {
+    "id": 315,
+    "arabicName": "زاوية مولاي ابراهيم",
+    "frenchName": "Moulay Brahim",
+    "long_d": 7,
+    "long_m": 58,
+    "lat_d": 31,
+    "lat_m": 17,
+    "alt": 1200
+  },
+  {
+    "id": 316,
+    "arabicName": "تولكولت",
+    "frenchName": "Toulkoult",
+    "long_d": 9,
+    "long_m": 4,
+    "lat_d": 31,
+    "lat_m": 14,
+    "alt": 1200
+  },
+  {
+    "id": 317,
+    "arabicName": "إيكس",
+    "frenchName": "Ikes",
+    "long_d": 7,
+    "long_m": 51,
+    "lat_d": 30,
+    "lat_m": 57,
+    "alt": 2500
+  },
+  {
+    "id": 318,
+    "arabicName": "كرس",
+    "frenchName": "Guers",
+    "long_d": 7,
+    "long_m": 38,
+    "lat_d": 31,
+    "lat_m": 32,
+    "alt": 2000
+  },
+  {
+    "id": 319,
+    "arabicName": "تيسنت",
+    "frenchName": "Tissint",
+    "long_d": 7,
+    "long_m": 18,
+    "lat_d": 29,
+    "lat_m": 53,
+    "alt": 1400
+  },
+  {
+    "id": 320,
+    "arabicName": "فم زكيد",
+    "frenchName": "Foum Zguid",
+    "long_d": 6,
+    "long_m": 52,
+    "lat_d": 30,
+    "lat_m": 4,
+    "alt": 650
+  }
 ]

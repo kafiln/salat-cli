@@ -1,6 +1,6 @@
 import { parseISO } from 'date-fns';
 import { describe, expect, it } from 'vitest';
-import { getNextPrayer, tConv24 } from './time.js';
+import { getImsakTime, getNextPrayer, tConv24 } from './time.js';
 
 describe('time utils', () => {
     describe('tConv24', () => {
@@ -9,6 +9,14 @@ describe('time utils', () => {
             expect(tConv24('05:15')).toBe('05:15 AM');
             expect(tConv24('00:00')).toBe('12:00 AM');
             expect(tConv24('12:00')).toBe('12:00 PM');
+        });
+    });
+
+    describe('getImsakTime', () => {
+        it('should return 10 minutes before Fajr', () => {
+            expect(getImsakTime('05:30')).toBe('05:20');
+            expect(getImsakTime('00:05')).toBe('23:55');
+            expect(getImsakTime('00:00')).toBe('23:50');
         });
     });
 

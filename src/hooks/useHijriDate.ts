@@ -5,8 +5,8 @@ export const useHijriDate = () => {
   const query = useQuery({
     queryKey: ["hijriDate"],
     queryFn: async () => {
-      const result = await getHijriDate();
-      return result.date;
+      const hijri = await getHijriDate();
+      return hijri;
     },
     staleTime: 1000 * 60 * 60 * 24, // 24 hours
     gcTime: 1000 * 60 * 60 * 24, // garbage collection after 24 hours
